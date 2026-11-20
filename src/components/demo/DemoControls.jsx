@@ -23,7 +23,7 @@ export function DemoControls() {
           <FlaskConical aria-hidden="true" className="h-4 w-4" />
         </span>
         <span className="flex-1">
-          Assignment demo controls
+          Demo settings
           <span className="block text-xs font-medium text-brand-charcoal/55">
             Loading failure, catalogue emptiness, and stock availability
           </span>

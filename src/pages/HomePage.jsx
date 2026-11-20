@@ -9,7 +9,6 @@ import {
   SearchX,
   ShoppingBag,
   Sparkles,
-  Star,
   Truck,
 } from 'lucide-react'
 import { PRODUCTS } from '../data/products.js'
@@ -20,7 +19,6 @@ import { usePageTitle } from '../hooks/usePageTitle.js'
 import { filterAndSortProducts } from '../lib/search.js'
 import { formatPKR, FREE_DELIVERY_THRESHOLD } from '../lib/businessRules.js'
 import { SearchAutocomplete } from '../components/search/SearchAutocomplete.jsx'
-import { DemoControls } from '../components/demo/DemoControls.jsx'
 import { ProductGrid, ProductGridSkeleton } from '../components/product/ProductGrid.jsx'
 import { ProductImage } from '../components/ui/ProductImage.jsx'
 import { EmptyState } from '../components/ui/EmptyState.jsx'
@@ -240,18 +238,6 @@ export function HomePage() {
               </div>
             </div>
 
-            <div className="absolute -bottom-5 -left-3 rounded-2xl border border-brand-charcoal/10 bg-white px-4 py-3 shadow-card sm:-left-6">
-              <div className="flex items-center gap-2">
-                <span className="grid h-9 w-9 place-items-center rounded-xl bg-amber-100 text-amber-800">
-                  <Star aria-hidden="true" className="h-4 w-4 fill-current" />
-                </span>
-                <div>
-                  <p className="text-sm font-bold text-brand-charcoal">4.6 / 5</p>
-                  <p className="text-[0.65rem] text-brand-charcoal/55">218 student reviews</p>
-                </div>
-              </div>
-            </div>
-
             <div className="absolute -right-2 top-8 rounded-2xl border border-brand-charcoal/10 bg-white px-3 py-2.5 shadow-card sm:-right-5">
               <p className="flex items-center gap-1.5 text-xs font-bold text-brand-charcoal">
                 <Truck aria-hidden="true" className="h-4 w-4 text-brand-navy" />
@@ -316,10 +302,6 @@ export function HomePage() {
               ))}
             </select>
           </div>
-        </div>
-
-        <div className="mt-6">
-          <DemoControls />
         </div>
 
         <div className="mt-6 flex flex-wrap gap-2" aria-label="Browse categories">

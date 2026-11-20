@@ -178,7 +178,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 | Invalid form input | Specific feedback; preserve valid input | Six validation rules; per-field messages; form state preserved | [x] |
 | Unavailable or restored selection | Check current data/rules, explain, allow correction | Cart reconciliation detects deleted products, zero stock, and excessive quantities; displays notices and fixes/corrects | [x] |
 | Loading failure | Clear error and working retry | Error panel + retry; one-shot failure demonstration recovers on retry | [x] |
-| Loading failure demo control | Clearly labelled/documented | Home "Assignment demo controls"; README instructions | [x] |
+| Loading failure demo control | Clearly labelled/documented | About page "Assignment demo controls"; README instructions | [x] |
 | Changed availability demo control | Clearly labelled/documented | Stock scenario selector: standard, low stock, sold out; shared catalogue state | [x] |
 | Console errors/warnings | Resolve | Production build and browser checks documented in `docs/VERIFICATION.md` | [manual] |
 

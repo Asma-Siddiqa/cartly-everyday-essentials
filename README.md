@@ -59,12 +59,12 @@ See `docs/VERIFICATION.md` for the full verification record.
 
 | Route | Purpose |
 | --- | --- |
-| `/` | Catalogue with search, autocomplete, filters, sorting, loading/error/empty/no-match states, demo controls, and compare tray |
+| `/` | Catalogue with search, autocomplete, filters, sorting, loading/error/empty/no-match states, and compare tray |
 | `/products/:id` | Product details, stock status, delivery panel, quantity selection, compare action, related products; invalid IDs show recovery links |
 | `/cart` | Cart lines, quantity changes, removal, reconciliation notices, delivery progress, and order summary |
 | `/checkout` | Controlled delivery form, validation summary, supported-area eligibility, stock re-check, calculated totals, simulated order |
 | `/order-confirmation/:id` | Simulated order summary and delivery details; invalid or corrupt order IDs show recovery links |
-| `/about` | Business profile, operating rules, supported areas, and the three investigated improvements |
+| `/about` | Business profile, operating rules, supported areas, investigated improvements, and labelled demo controls |
 | `*` | Not-found page with links back to the shop |
 
 Header and footer links use React Router, so browser Back/Forward works. Nested routes are configured for direct refresh through SPA rewrites.
@@ -77,7 +77,7 @@ Header and footer links use React Router, so browser Back/Forward works. Nested 
 - **Product comparison** for up to three products, with a tray and a native `<dialog>` side-by-side table.
 - **Cart persistence** using `localStorage`; only product IDs and quantities are stored. Restored carts are validated against the current catalogue and stock.
 - **Asynchronous mock loader** with a visible skeleton, simulated failure, working retry, empty-catalogue state, and no-match state.
-- **Labelled demo controls** on the home page for loading failure, empty catalogue, and stock scenarios (`standard`, `limited`, `sold-out`).
+- **Labelled demo controls** on the About page for loading failure, empty catalogue, and stock scenarios (`standard`, `limited`, `sold-out`). They are kept out of the shop page so the catalogue stays focused on shopping.
 - **Controlled checkout form** with six fields, inline errors, an error summary, preserved valid input, and focus management.
 - **Derived totals** recalculated from the cart and shared rules: item count, subtotal, delivery fee, amount to free delivery, and total.
 - **Responsive layouts** tested at 390 px and 1280 px, including a mobile menu, mobile filter drawer, stacked cards, and no page-wide horizontal overflow.
@@ -137,21 +137,23 @@ This is a frontend assignment prototype. It has no backend, authentication, real
 
 ### Loading failure and retry
 
-1. Open `/`.
-2. In **Assignment demo controls**, select **Simulate loading failure**.
-3. Confirm the catalogue is replaced by an error panel with a **Retry loading** action.
+1. Open `/about` and use **Assignment demo controls** at the bottom.
+2. Select **Simulate load failure**.
+3. Return to `/` and confirm the catalogue is replaced by an error panel with a **Retry loading** action.
 4. Select **Retry loading**. The retry request no longer forces failure and the catalogue loads.
 
 ### Empty catalogue vs no search matches
 
-1. In **Assignment demo controls**, enable **Empty catalogue**. The result is an empty-catalogue message with a reset action, not a “no match” message.
-2. Disable it, then search for a term such as `zzzz`. The result is a separate no-match panel with **Clear search/filters**.
+1. Open `/about` and use **Assignment demo controls**.
+2. Enable **Empty catalogue**. Return to `/`; the result is an empty-catalogue message with a reset action, not a “no match” message.
+3. Disable it, then search for a term such as `zzzz`. The result is a separate no-match panel with **Clear search/filters**.
 
 ### Changed availability
 
-1. In **Assignment demo controls**, choose **Low stock** or **Several items sold out**.
-2. Check the catalogue, product details, cart, and checkout. Stock badges and quantity limits update from the same catalogue state.
-3. Choose **Standard stock** to restore the original levels.
+1. Open `/about` and use **Assignment demo controls**.
+2. Choose **Low stock** or **Several items sold out**.
+3. Return to `/` and check the catalogue, product details, cart, and checkout. Stock badges and quantity limits update from the same catalogue state.
+4. Choose **Standard stock** to restore the original levels.
 
 ### Stock boundaries
 
@@ -198,7 +200,7 @@ src/
 ├── components/
 │   ├── cart/               Cart line, order summary
 │   ├── compare/            Compare tray and dialog
-│   ├── demo/               Labelled assignment demo controls
+│   ├── demo/               Labelled assignment demo controls (About page)
 │   ├── filters/            Filter panel and active filter chips
 │   ├── layout/             Header, footer, layout, route focus
 │   ├── product/            Product card, grid, delivery panel

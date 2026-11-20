@@ -82,28 +82,27 @@ function CompareDialog({ open, onClose }) {
                     </th>
                     {comparedProducts.map((product) => (
                       <th key={product.id} scope="col" className="min-w-44 border-b border-l border-brand-charcoal/10 p-3 align-top">
-                        <div className="relative">
-                          <button
-                            type="button"
-                            onClick={() => removeCompare(product.id)}
-                            aria-label={`Remove ${product.name} from comparison`}
-                            className="absolute right-0 top-0 z-10 grid h-7 w-7 place-items-center rounded-full bg-white/90 text-brand-charcoal/60 shadow-sm transition hover:bg-red-50 hover:text-red-700"
-                          >
-                            <X aria-hidden="true" className="h-3.5 w-3.5" />
-                          </button>
-                          <ProductImage
-                            src={product.image}
-                            alt={product.name}
-                            className="aspect-square w-full overflow-hidden rounded-xl bg-brand-blue-soft object-cover"
-                          />
-                          <Link
-                            to={`/products/${product.id}`}
-                            onClick={onClose}
-                            className="mt-3 block font-bold leading-snug text-brand-charcoal underline-offset-4 hover:underline"
-                          >
-                            {product.name}
-                          </Link>
-                        </div>
+                        <ProductImage
+                          src={product.image}
+                          alt={product.name}
+                          className="aspect-square w-full overflow-hidden rounded-xl bg-brand-blue-soft object-cover"
+                        />
+                        <Link
+                          to={`/products/${product.id}`}
+                          onClick={onClose}
+                          className="mt-3 block font-bold leading-snug text-brand-charcoal underline-offset-4 hover:underline"
+                        >
+                          {product.name}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => removeCompare(product.id)}
+                          aria-label={`Remove ${product.name} from comparison`}
+                          className="mt-2 inline-flex h-8 items-center gap-1 rounded-lg border border-brand-charcoal/15 bg-white px-2 text-[0.68rem] font-bold text-brand-charcoal/65 transition hover:border-red-200 hover:bg-red-50 hover:text-red-700 focus-visible:outline-none"
+                        >
+                          <X aria-hidden="true" className="h-3.5 w-3.5" />
+                          Remove
+                        </button>
                       </th>
                     ))}
                   </tr>

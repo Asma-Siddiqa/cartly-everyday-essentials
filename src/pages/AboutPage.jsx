@@ -15,6 +15,7 @@ import {
   XCircle,
 } from 'lucide-react'
 import { usePageTitle } from '../hooks/usePageTitle.js'
+import { DemoControls } from '../components/demo/DemoControls.jsx'
 import { DELIVERY_AREAS, SERVICE_CITIES, UNSUPPORTED_AREA_OPTION } from '../data/deliveryAreas.js'
 import {
   DELIVERY_FEE,
@@ -395,6 +396,22 @@ export function AboutPage() {
               Product photography is licensed stock imagery; business details and product brands are fictional.
             </li>
           </ul>
+        </div>
+      </section>
+
+      <section id="demo-controls" className="container-shell scroll-mt-36 pb-12" aria-labelledby="demo-heading">
+        <div className="rounded-3xl border border-dashed border-brand-charcoal/25 bg-white p-5 sm:p-6">
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Verification tools</p>
+          <h2 id="demo-heading" className="mt-2 font-display text-2xl font-semibold tracking-tight text-brand-charcoal">
+            Assignment demo controls
+          </h2>
+          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-brand-charcoal/60">
+            These controls are kept off the shop page so the catalogue stays focused on shopping. Use them here to
+            demonstrate loading failure, the empty catalogue, and changed stock availability.
+          </p>
+          <div className="mt-5">
+            <DemoControls />
+          </div>
         </div>
       </section>
     </div>
