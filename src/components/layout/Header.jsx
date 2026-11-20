@@ -44,7 +44,7 @@ export function Header() {
   const cartLabel = `Shopping cart, ${itemCount} ${itemCount === 1 ? 'item' : 'items'}`
 
   return (
-    <>
+    <div className="sticky top-0 z-40">
       <div className="bg-brand-charcoal text-white">
         <div className="container-shell flex min-h-9 flex-wrap items-center justify-center gap-x-2 gap-y-1 py-2 text-center text-[0.7rem] font-semibold tracking-wide sm:text-xs">
           <span className="inline-flex h-1.5 w-1.5 rounded-full bg-brand-blue" aria-hidden="true" />
@@ -56,7 +56,7 @@ export function Header() {
         </div>
       </div>
 
-      <header className="sticky top-0 z-40 border-b border-brand-charcoal/10 bg-brand-cream/95 backdrop-blur">
+      <header className="border-b border-brand-charcoal/10 bg-brand-cream/95 backdrop-blur">
         <div className="container-shell">
           <div className="flex min-h-[4.5rem] items-center gap-4 py-3">
             <Logo />
@@ -174,6 +174,6 @@ export function Header() {
           )}
         </div>
       </header>
-    </>
+    </div>
   )
 }

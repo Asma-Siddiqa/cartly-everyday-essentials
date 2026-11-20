@@ -151,7 +151,7 @@ export function AboutPage() {
         </dl>
       </section>
 
-      <section id="rules" className="scroll-mt-36 border-y border-brand-charcoal/10 bg-white py-12" aria-labelledby="rules-heading">
+      <section id="rules" className="scroll-mt-48 lg:scroll-mt-36 border-y border-brand-charcoal/10 bg-white py-12" aria-labelledby="rules-heading">
         <div className="container-shell">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Operating rules</p>
           <h2 id="rules-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight text-brand-charcoal sm:text-4xl">
@@ -250,7 +250,7 @@ export function AboutPage() {
             </article>
           </div>
 
-          <div id="delivery" className="mt-8 scroll-mt-36 rounded-3xl border border-brand-blue-strong/20 bg-brand-blue-soft p-5 sm:p-6">
+          <div id="delivery" className="mt-8 scroll-mt-48 lg:scroll-mt-36 rounded-3xl border border-brand-blue-strong/20 bg-brand-blue-soft p-5 sm:p-6">
             <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
               <div>
                 <h3 className="font-display text-2xl font-semibold text-brand-charcoal">Supported delivery areas</h3>
@@ -283,7 +283,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section id="compare" className="container-shell scroll-mt-36 py-12" aria-labelledby="compare-heading">
+      <section id="compare" className="container-shell scroll-mt-48 lg:scroll-mt-36 py-12" aria-labelledby="compare-heading">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Compare with context</p>
@@ -399,7 +399,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section id="demo-controls" className="container-shell scroll-mt-36 pb-12" aria-labelledby="demo-heading">
+      <section id="demo-controls" className="container-shell scroll-mt-48 lg:scroll-mt-36 pb-12" aria-labelledby="demo-heading">
         <div className="rounded-3xl border border-dashed border-brand-charcoal/25 bg-white p-5 sm:p-6">
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Verification tools</p>
           <h2 id="demo-heading" className="mt-2 font-display text-2xl font-semibold tracking-tight text-brand-charcoal">

@@ -270,7 +270,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="catalogue" className="container-shell scroll-mt-36 py-10 lg:py-14" aria-labelledby="catalogue-heading">
+      <section id="catalogue" className="container-shell scroll-mt-48 lg:scroll-mt-36 py-10 lg:py-14" aria-labelledby="catalogue-heading">
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.16em] text-brand-blue-strong">
