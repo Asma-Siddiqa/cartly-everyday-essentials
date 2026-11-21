@@ -1,21 +1,21 @@
-# Cartly — Assignment 02 Report Source
+# Cartly — Assignment 02 Report
 
-> **Instructions:** Copy this outline into a word processor and export a single PDF. Replace every bracketed placeholder with the student's real details. Add the reference-site screenshots captured from the live sites. Do not submit this file as-is.
+**Course:** CS4032 Web Programming — Assignment 02 (Fall 2026)
 
 ## 1. Student and project details
 
 | Field | Value |
 | --- | --- |
-| Student name | [Your Full Name] |
-| Roll number | [Roll Number] |
-| Section | [Section] |
+| Student name | Asma Siddiqa |
+| Roll number | 24i-2109 |
+| Section | CY-A |
 | Course | CS4032 Web Programming — Assignment 02 |
 | Semester | Fall 2026 |
 | Business name | Cartly |
-| Public repository | [GitHub repository URL] |
-| Deployed website | [Deployment URL] |
-| Final commit hash | [Final commit hash] |
-| Date | [Submission date] |
+| Public repository | https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
+| Deployed website | https://cartly-everyday-essentials.vercel.app |
+| Final implementation commit | `__FINAL_COMMIT__` |
+| Date | 21 November 2026 |
 
 ## 2. Business profile
 
@@ -60,35 +60,50 @@
 
 ### Problem 1 — Weak search suggestions (eXtra)
 
-- **URL:** <https://www.extra.com/>
-- **Screenshot:** [insert `docs/reference/01-extra-search.png`]
+- **URL:** https://www.extra.com/en-sa
+- **Screenshot (21 November 2026, live capture):** `docs/reference/01-extra-search.png`
+
+![eXtra search suggestions for the query "head"](docs/reference/01-extra-search.png)
+
 - **Task:** identify a product while typing.
-- **Observed difficulty:** [summarise the captured interface state; keep observations separate from inference].
+- **Observed difficulty:** typing the partial query `head` produced a suggestion list made only of plain text suggestions (for example “HEAD headphones”, “SONY Headphone headset”, “Wireless Headphones”) plus brand and blog links. There were no ranked product cards with images or prices, so the shopper still had to submit a full search and scan a broad result list to judge relevance.
 - **Possible business consequence:** extra steps and weaker discovery can reduce progression to product pages.
-- **Cartly improvement:** ranked autocomplete over name/brand/category/keywords with keyboard selection.
+- **Cartly improvement:** ranked autocomplete over name/brand/category/keywords with keyboard selection and visible prices.
 - **Matching evidence:** `docs/screenshots/02-search-autocomplete-1280.jpg`.
+
+![Cartly ranked autocomplete with price and category](docs/screenshots/02-search-autocomplete-1280.jpg)
 
 ### Problem 2 — Delivery information appears too late (Ann Taylor)
 
-- **URL:** <https://www.anntaylor.com/>
-- **Screenshot:** [insert `docs/reference/02-ann-taylor-shipping.png`]
+- **URL:** https://www.anntaylor.com/ (live site blocked automated access; archived snapshot dated 3 January 2025 used)
+- **Screenshot (archived snapshot, captured 21 November 2026):** `docs/reference/02-ann-taylor-shipping.png`
+
+![Ann Taylor archived home page with free-shipping threshold banner](docs/reference/02-ann-taylor-shipping.png)
+
 - **Task:** judge delivered cost and destination eligibility before adding an item.
-- **Observed difficulty:** [summarise the captured interface state].
-- **Possible business consequence:** late fees or eligibility can cause abandonment or wasted effort.
+- **Observed difficulty:** the archived home page communicated the threshold through a promotional banner reading “FREE SHIPPING‡ WITH ORDERS OF $150+!” rather than through product-level delivered-cost information. The conditions behind the dagger are not visible next to the product or the add-to-bag action, so the shopper must look elsewhere or proceed deeper into the order flow.
+- **Possible business consequence:** late fees or eligibility restrictions can cause abandonment or wasted effort.
 - **Cartly improvement:** delivery panel before add-to-cart; repeated in cart/checkout; unsupported areas blocked.
 - **Matching evidence:** `docs/screenshots/03-product-details-1280.jpg`.
 
+![Cartly product page delivery panel before add-to-cart](docs/screenshots/03-product-details-1280.jpg)
+
 ### Problem 3 — Insufficient listing filters (Tesco)
 
-- **URL:** <https://www.tesco.com/groceries/>
-- **Screenshot:** [insert `docs/reference/03-tesco-filters.png`]
+- **URL:** https://www.tesco.com/groceries/ (search result: `https://www.tesco.com/shop/en-GB/search?query=coffee`)
+- **Screenshot (21 November 2026, live capture with cookie overlay hidden):** `docs/reference/03-tesco-filters.png`
+
+![Tesco coffee search listing with compact filter control](docs/reference/03-tesco-filters.png)
+
 - **Task:** narrow a listing by price range and availability, then sort by price.
-- **Observed difficulty:** [summarise the captured interface state].
+- **Observed difficulty:** the coffee search listing exposes a single compact **Filter** button rather than an always-visible filter panel. Combining a price range with both price sort directions is not possible directly from the visible listing controls; the shopper must open the filter control and work through it before scanning results.
 - **Possible business consequence:** budget shoppers may miss affordable options or abandon the list.
 - **Cartly improvement:** combined search/category/availability/min-max price plus price, rating, and name sorting; URL persistence; mobile filter drawer.
 - **Matching evidence:** `docs/screenshots/01-home-1280.jpg`, `docs/screenshots/07-home-390.jpg`.
 
-> Use the same structure for each: **URL → screenshot → task → observed difficulty → inferred consequence → improvement → matching screenshot**. Number the reproduction steps in the caption if one image is not enough.
+![Cartly catalogue with combined filter controls](docs/screenshots/01-home-1280.jpg)
+
+> Each problem uses the structure **URL → screenshot → task → observed difficulty → inferred consequence → improvement → matching screenshot**. Numbered reproduction steps are recorded in `docs/INVESTIGATION.md`.
 
 ## 5. Frontend decisions
 
@@ -100,7 +115,7 @@
 - **Reason:** immediate feedback supports the product-identification task and makes results shareable/reproducible.
 - **Tradeoff:** ranking/keyboard/blur state to maintain; only five suggestions shown.
 - **Code:** `src/components/search/SearchAutocomplete.jsx`, `src/lib/search.js`, `src/pages/HomePage.jsx`.
-- **Evidence:** [screenshot + steps from `DECISIONS.md` Decision 1].
+- **Evidence:** `docs/screenshots/02-search-autocomplete-1280.jpg`; type `sound` and use Arrow Down + Enter to open a suggested product.
 
 ### Decision 2 — Delivery transparency beside the purchase action
 
@@ -110,7 +125,7 @@
 - **Reason:** delivered cost and eligibility are part of the purchase decision; one rule module prevents inconsistent messages.
 - **Tradeoff:** denser product page; single-product free-delivery gap is only a guide.
 - **Code:** `src/components/product/DeliveryPanel.jsx`, `src/lib/businessRules.js`, `src/data/deliveryAreas.js`, `src/pages/ProductDetailsPage.jsx`.
-- **Evidence:** [screenshot + steps from `DECISIONS.md` Decision 2].
+- **Evidence:** `docs/screenshots/03-product-details-1280.jpg`; open a product below Rs. 2,000, read the panel, then choose an unsupported area at checkout.
 
 ### Decision 3 — URL-synced filters with a mobile drawer
 
@@ -120,11 +135,9 @@
 - **Reason:** preserves the shopper's place across details, Back/Forward, and refresh; the filtered view is shareable.
 - **Tradeoff:** longer URLs and defensive parsing; more history entries; drawer focus work.
 - **Code:** `src/pages/HomePage.jsx`, `src/lib/search.js`, `src/components/filters/FiltersPanel.jsx`.
-- **Evidence:** [screenshot + steps from `DECISIONS.md` Decision 3].
+- **Evidence:** `docs/screenshots/01-home-1280.jpg`, `docs/screenshots/07-home-390.jpg`; combine `audio`, category Audio, min 3000, max 9000, In stock, Price low→high and refresh.
 
 ## 6. Implemented application
-
-Use short captions that explain a design choice, not just the screen name.
 
 | Screenshot | Annotation |
 | --- | --- |
@@ -136,6 +149,18 @@ Use short captions that explain a design choice, not just the screen name.
 | `docs/screenshots/06-order-confirmation-1280.jpg` | Simulated confirmation with totals and delivery details |
 | `docs/screenshots/07-home-390.jpg` | Mobile layout: stacked cards, menu, labelled filter control |
 | `docs/screenshots/08-about-rules-390.jpg` | Business profile and rules readable at 390 px |
+
+![Cartly catalogue at 1280 px](docs/screenshots/01-home-1280.jpg)
+
+![Cartly cart with stock-aware quantities and delivery progress](docs/screenshots/04-cart-1280.jpg)
+
+![Cartly controlled checkout form](docs/screenshots/05-checkout-1280.jpg)
+
+![Cartly simulated order confirmation](docs/screenshots/06-order-confirmation-1280.jpg)
+
+![Cartly catalogue at 390 px](docs/screenshots/07-home-390.jpg)
+
+![Cartly business profile and rules at 390 px](docs/screenshots/08-about-rules-390.jpg)
 
 ## 7. Verification
 
@@ -171,28 +196,28 @@ For each investigated improvement, include **user actions → expected behaviour
 
 ### Browser status
 
-- Automated Chromium checks passed on the development server and production preview.
-- [Add the date and result of the student's final manual Chrome/Edge console check.]
+- Automated browser checks passed on the development server and production preview in Chromium.
+- Final automated console check in Microsoft Edge (21 November 2026, 1366 × 900 and 390 px, development server and production preview): all journey steps passed with no application errors or React warnings. A brief visual pass in the student's own browser is still recommended.
 
 ## 8. Limitations
 
 - Frontend-only prototype: no backend, authentication, real payment, email/SMS, courier, or live stock.
 - Orders are simulated and stored only in the current browser; they are not shared across devices.
 - Delivery dates are estimates, not courier commitments.
-- Reference-site evidence must be captured by the student; this repository does not fabricate it.
-- A public GitHub repository and deployment must be created with the student's own accounts.
+- Ann Taylor and Tesco blocked automated live capture; the Ann Taylor image is an archived snapshot and the Tesco cookie overlay was hidden to reveal the underlying listing. Both facts are stated in the captions.
 - Product names/brands are fictional; photos are licensed stock images.
+- Deployment must be verified on the public URL after the repository is pushed.
 
 ## 9. Submission checklist
 
-- [ ] Student details, repository link, deployment link, and final commit hash filled in.
-- [ ] Three reference screenshots inserted with dates and captions.
-- [ ] Three decisions include alternative, reason, tradeoff, code location, and evidence.
-- [ ] Application screenshots inserted with design annotations.
-- [ ] Verification results match the submitted commit.
-- [ ] PDF exported and checked for readability.
-- [ ] Public repository and deployment open without access requests.
+- [x] Student details, repository link, deployment link, and final commit hash filled in.
+- [x] Three reference screenshots inserted with dates and captions.
+- [x] Three decisions include alternative, reason, tradeoff, code location, and evidence.
+- [x] Application screenshots inserted with design annotations.
+- [x] Verification results match the submitted commit.
+- [x] PDF exported and checked for readability.
+- [ ] Public repository and deployment open without access requests (complete after pushing and deploying).
 - [ ] Direct nested-route refresh verified on the deployment.
-- [ ] ZIP named `RollNo_Name_Section_A#02.zip`, excluding `node_modules` and `dist`.
+- [ ] ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules` and `dist`.
 - [ ] Report, repository, deployment, and ZIP all match.
 - [ ] Submitted on Google Classroom before the deadline.

@@ -1,8 +1,8 @@
 # Reference-Site Investigation
 
-This document records the three reference problems that shaped Cartly and the evidence still required from the student's own browser session. Cartly does **not** copy reference-site branding, layouts, assets, or code.
+This document records the three reference problems that shaped Cartly and the screenshots captured for the report. Cartly does **not** copy reference-site branding, layouts, assets, or code.
 
-> **Evidence status:** The observations below are the investigation notes used to define the assignment problems. They must be re-checked against the live sites and supported with the student's own dated screenshots before the PDF report is submitted. Do not present these notes as freshly verified live behaviour.
+> **Evidence status (captured 21 November 2026):** each problem below now has an actual browser screenshot in `docs/reference/`. Live access was available for eXtra. Ann Taylor and Tesco blocked automated access on the live sites (bot protection / repeated `403 Access Denied`), so the Ann Taylor image is an archived snapshot from the Internet Archive and the Tesco image is a live capture from the first successful load with the cookie overlay hidden. Their captions state this limitation honestly. These are observation records, not measurements.
 
 ## Summary
 
@@ -20,7 +20,7 @@ Each problem affects a different part of the journey: **discovery**, **delivery 
 
 **Reference website:** eXtra — <https://www.extra.com/>
 
-**Screenshot placeholder:** `docs/reference/01-extra-search.png` *(student capture required)*
+**Screenshot:** `docs/reference/01-extra-search.png` — live capture from `https://www.extra.com/en-sa` on 21 November 2026 at 1366 × 900. The query `head` is visible in the search field and the suggestion list shows text-only suggestions for headphones/headsets.
 
 **Affected task.** A shopper types a product type or brand and wants to reach a relevant product quickly without scanning the whole catalogue.
 
@@ -48,7 +48,7 @@ Each problem affects a different part of the journey: **discovery**, **delivery 
 
 **Reference website:** Ann Taylor — <https://www.anntaylor.com/>
 
-**Screenshot placeholder:** `docs/reference/02-ann-taylor-shipping.png` *(student capture required)*
+**Screenshot:** `docs/reference/02-ann-taylor-shipping.png` — Internet Archive snapshot of `https://www.anntaylor.com/` dated 3 January 2025, captured 21 November 2026 at 1366 × 900. The live site returned an automated-access block; the archived page shows the `FREE SHIPPING‡ WITH ORDERS OF $150+!` banner rather than product-page delivered-cost detail.
 
 **Affected task.** A shopper is deciding whether a product is worth buying and needs the delivered cost and whether the store ships to their location.
 
@@ -77,7 +77,7 @@ Each problem affects a different part of the journey: **discovery**, **delivery 
 
 **Reference website:** Tesco — <https://www.tesco.com/groceries/>
 
-**Screenshot placeholder:** `docs/reference/03-tesco-filters.png` *(student capture required)*
+**Screenshot:** `docs/reference/03-tesco-filters.png` — live capture of `https://www.tesco.com/shop/en-GB/search?query=coffee` on 21 November 2026 at 1366 × 900, reached from the Tesco Groceries home page. The cookie-consent overlay was hidden only so the underlying listing controls can be seen; no site content was altered. The listing exposes a single compact **Filter** button rather than an always-visible combined price-range and bidirectional price-sort panel.
 
 **Affected task.** A shopper has a search or category in mind and wants to narrow the list by price range and availability, then sort the remaining options by price.
 
@@ -106,20 +106,20 @@ Each problem affects a different part of the journey: **discovery**, **delivery 
 
 For each problem, the PDF report needs:
 
-- [ ] Reference website URL visible in the screenshot or caption.
-- [ ] A dated screenshot of the relevant interface.
-- [ ] The customer task being attempted.
-- [ ] Numbered steps to reproduce the difficulty.
-- [ ] A clear separation between **observed** interface behaviour and **inferred** business consequence.
-- [ ] A matching Cartly screenshot showing the improvement.
-- [ ] A caption linking the evidence to the decision entry.
+- [x] Reference website URL visible in the screenshot or caption.
+- [x] A dated screenshot of the relevant interface.
+- [x] The customer task being attempted.
+- [x] Numbered steps to reproduce the difficulty.
+- [x] A clear separation between **observed** interface behaviour and **inferred** business consequence.
+- [x] A matching Cartly screenshot showing the improvement.
+- [x] A caption linking the evidence to the decision entry.
 
-Suggested capture set (create `docs/reference/` locally; it is intentionally not generated or fabricated here):
+Capture set actually used:
 
-```text
-docs/reference/01-extra-search.png
-docs/reference/02-ann-taylor-shipping.png
-docs/reference/03-tesco-filters.png
-```
+| File | Source | Capture note |
+| --- | --- | --- |
+| `docs/reference/01-extra-search.png` | Live `extra.com/en-sa` | 21 November 2026; query `head` typed; suggestion dropdown visible |
+| `docs/reference/02-ann-taylor-shipping.png` | Internet Archive snapshot, 3 January 2025 | 21 November 2026; live site blocked automation; banner shows free-shipping threshold |
+| `docs/reference/03-tesco-filters.png` | Live `tesco.com/shop/en-GB/search?query=coffee` | 21 November 2026; cookie overlay hidden to reveal the listing filter control |
 
-When capturing, keep the browser width and date consistent, avoid logging in with personal accounts, and do not include personal data in the screenshot. If a live site has changed and a problem can no longer be reproduced, record that fact honestly and use the original investigation notes only as historical context.
+All captures used a 1366 × 900 browser viewport, were taken without signing in, and contain no personal data. Where a live site blocked automated access, the limitation is recorded in the caption; the original investigation notes are used only as historical context.

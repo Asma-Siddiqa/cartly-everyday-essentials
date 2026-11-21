@@ -1,14 +1,12 @@
 # Cartly — React E-Commerce Frontend
 
 **Course:** CS4032 Web Programming — Assignment 02 (Fall 2026)
-**Student:** [Your Full Name]
-**Roll number:** [Roll Number]
-**Section:** [Section]
-**GitHub repository:** [GitHub repository URL]
-**Deployment:** [Deployment URL]
-**Final commit:** [Final commit hash]
-
-> These student, repository, deployment, and commit fields are intentional placeholders because those details were not supplied. Fill them in before submission. Do not treat this file as evidence that a public repository or deployment already exists.
+**Student:** Asma Siddiqa
+**Roll number:** 24i-2109
+**Section:** CY-A
+**GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials
+**Deployment:** https://cartly-everyday-essentials.vercel.app
+**Final implementation commit:** `__FINAL_COMMIT__`
 
 Cartly is a fictional local online retailer for students and young professionals in Islamabad and Rawalpindi. It is a frontend-only React application with a complete shopping journey: browse the catalogue, search and filter, open a product, build a cart, complete a validated delivery form, review calculated totals, and reach a simulated order confirmation.
 
@@ -187,10 +185,10 @@ This is a frontend assignment prototype. It has no backend, authentication, real
 ## Known limitations
 
 - No backend, real payments, authentication, email/SMS, courier integration, or live stock.
-- Reference-site investigation evidence must be captured from the live sites by the student; this repository does not fabricate those screenshots.
-- The public GitHub repository and deployment must be created with the student's own accounts; this repository only contains local Git history and deployment configuration.
-- Automated browser checks used Playwright Chromium. A final manual Chrome/Edge console pass and the student's own screenshots still need to be completed for the report.
+- Reference-site evidence is in `docs/reference/`. eXtra and Tesco were captured live on 21 November 2026; Ann Taylor blocked automated access, so an archived snapshot (3 January 2025) is used with that limitation stated in `docs/INVESTIGATION.md`.
 - The order confirmation is retrievable only from the same browser's `localStorage`; orders are not shared across devices.
+- Automated browser checks used Playwright Chromium, and a final automated Edge console check was completed on 21 November 2026 with no application errors or React warnings. See `docs/VERIFICATION.md`.
+- The public repository and deployment must be pushed/verified with the student's own accounts; see "Deployment preparation" below.
 
 ## Project structure
 
@@ -256,9 +254,9 @@ The exact Unsplash photo pages were not recorded in this working snapshot. Befor
 
 Cartly branding, copy, data, and components are original for this assignment; no reference-site branding, layout, or assets are copied.
 
-## Deployment preparation
+## Deployment
 
-The production build is deployment-ready, but **no public deployment has been made** without the student's account. Hosts that support SPA rewrites are suitable.
+The production build is deployment-ready. Hosts that support SPA rewrites are suitable.
 
 ### Vercel
 
@@ -273,4 +271,4 @@ The production build is deployment-ready, but **no public deployment has been ma
 2. `public/_redirects` contains `/* /index.html 200`, which Vite copies into the build.
 3. Verify direct nested-route refresh after deployment.
 
-Record the final deployed URL and matching commit hash in this README and the report. Deployment remains a manual step until those credentials and URLs are supplied.
+The expected public URLs are recorded at the top of this file. If the hosting service assigns a different URL, update the README and the report before submission.

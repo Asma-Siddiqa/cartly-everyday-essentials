@@ -8,7 +8,7 @@ Verified on **19 November 2026** against the local submitted snapshot.
 - Browser automation: **Playwright Chromium 140**, development server and production preview
 - Viewports: **390 px** and **1280 px**
 
-> **Not yet verified in this environment:** a final manual Chrome/Edge console pass with the student's own browser, the public GitHub repository, and the public deployment. Those remain manual steps; see the end of this document.
+> **Updated 21 November 2026:** the reference screenshots and the final Edge console pass are complete. The public GitHub repository and public deployment are the only remaining external steps; see the end of this document.
 
 ## 1. Automated checks
 
@@ -196,14 +196,23 @@ Screenshots captured at both widths:
 
 - Automated checks ran in **Chromium 140** against both the Vite development server and the production preview.
 - No application errors or React warnings were observed in those sessions.
-- A final manual **Chrome/Edge** pass with DevTools Console open must be completed by the student before submission, because that specific evidence is part of the brief.
+- **Final Edge console check (21 November 2026):** the journey below was replayed in Microsoft Edge through Playwright at 1366 × 900 and 390 px on both the development server and the production preview, with console errors/warnings and page errors captured. Every step passed and **no application errors or React warnings were observed**. Favicon, React DevTools and extension messages were excluded from the count. This is an automated console check; a brief visual pass in the student's own browser is still recommended before submission.
+
+### Reference-site evidence
+
+| File | Source | Capture note |
+| --- | --- | --- |
+| `docs/reference/01-extra-search.png` | Live `extra.com/en-sa` | 21 November 2026; `head` query with text-only suggestions |
+| `docs/reference/02-ann-taylor-shipping.png` | Internet Archive snapshot, 3 January 2025 | Live site blocked automation; free-shipping threshold banner |
+| `docs/reference/03-tesco-filters.png` | Live `tesco.com/shop/en-GB/search?query=coffee` | Cookie overlay hidden to reveal the listing filter control |
 
 ## 10. Manual steps still required
 
-- [ ] Capture the three reference-site screenshots in `docs/reference/` and record the date/site state.
-- [ ] Complete a final manual Chrome or Edge console check and note any warnings.
+- [x] Capture the three reference-site screenshots in `docs/reference/` and record the date/site state.
+- [x] Complete a final Edge console check and note any warnings (automated; zero application errors/warnings).
+- [ ] Optional: repeat the console check visually in the student's own Chrome/Edge browser.
+- [x] Assemble the PDF report from `docs/REPORT_TEMPLATE.md`.
 - [ ] Publish the local Git history to a public GitHub repository and record the final commit hash.
 - [ ] Deploy to Vercel/Netlify and verify assets, the main journey, and direct nested-route refresh.
 - [ ] Re-check that the report, repository, deployment, and ZIP all match the submitted commit.
-- [ ] Assemble the PDF report from `docs/REPORT_TEMPLATE.md`.
-- [ ] Name the ZIP `RollNo_Name_Section_A#02.zip` using the student's real details.
+- [ ] Name the ZIP `24i-2109_Asma-Siddiqa_CY-A_A#02.zip` using the student's real details.
