@@ -6,7 +6,7 @@
 **Section:** CY-A
 **GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials
 **Deployment:** https://cartly-everyday-essentials.vercel.app
-**Final implementation commit:** `__FINAL_COMMIT__`
+**Final implementation commit:** `691d11b75429a04318db9bbf637c445ffb9987b4`
 
 Cartly is a fictional local online retailer for students and young professionals in Islamabad and Rawalpindi. It is a frontend-only React application with a complete shopping journey: browse the catalogue, search and filter, open a product, build a cart, complete a validated delivery form, review calculated totals, and reach a simulated order confirmation.
 
