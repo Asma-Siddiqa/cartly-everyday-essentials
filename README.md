@@ -252,14 +252,6 @@ src/
 
 The source ZIP is stored outside this public repository using the private assignment submission naming convention. It contains the 93 tracked project files under `WebAssignment/` and excludes `node_modules/`, `dist/`, `.git/`, `.vercel/`, `.env*`, and `docs/*.pdf`. The PDF report remains a separate local submission at `docs/Cartly_Assignment_02_Report.pdf`; it is intentionally untracked and retains the private student details. The exact final HEAD is recorded in the generated PDF and the final submission message.
 
-## Asset licensing
-
-Product photographs are locally stored Unsplash images, used under the [Unsplash License](https://unsplash.com/license). The files are local so the catalogue does not depend on third-party hotlinks, and a `ProductImage` fallback covers failed loads. Fonts are locally bundled through Fontsource.
-
-The exact Unsplash photo pages were not recorded in this working snapshot. Before submission, either record the source page for each local image in this section or replace the images with photos whose source URLs are documented. The Unsplash License does not require attribution, but keeping the source list makes the licence auditable. Do not claim a specific photographer or source without verifying it.
-
-Cartly branding, copy, data, and components are original for this assignment; no reference-site branding, layout, or assets are copied.
-
 ## Deployment
 
 ### Deployment status (verified 22 November 2026)
@@ -284,5 +276,3 @@ The production build is deployment-ready. Hosts that support SPA rewrites are su
 1. Import the repository; build command `npm run build`; publish directory `dist`.
 2. `public/_redirects` contains `/* /index.html 200`, which Vite copies into the build.
 3. Verify direct nested-route refresh after deployment.
-
-The public deployment has been verified. If you redeploy later, re-run the direct nested-route check and update the deployment ID above.
