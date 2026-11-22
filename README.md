@@ -267,7 +267,7 @@ Cartly branding, copy, data, and components are original for this assignment; no
 
 - Public repository: https://github.com/Asma-Siddiqa/cartly-everyday-essentials
 - Production deployment: https://cartly-everyday-essentials.vercel.app
-- Deployment ID: `dpl_8RjkafySpv3TFGiyCnpdaCsjPidt`
+- Deployment ID: `dpl_4sV3Zet3aBzvEPsj7yocBmRngWbq`
 - Direct browser checks at 1280 × 900 and 390 × 844 confirmed the home catalogue, `/products/glide-wireless-mouse`, and `/about?test=1`; **zero console errors or React warnings** were observed.
 - `vercel.json` rewrites all paths to `/index.html`, so nested-route refresh works on the public URL. `public/_redirects` provides the equivalent rule for Netlify.
 

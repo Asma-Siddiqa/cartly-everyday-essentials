@@ -223,7 +223,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - [x] SPA rewrite configuration included for Vercel (`vercel.json`) and Netlify (`public/_redirects`).
 - [x] Relative/imported assets so hashed assets load after deployment.
 - [x] Nested-route refresh support configured with SPA rewrites.
-- [x] **Deployed to Vercel** — https://cartly-everyday-essentials.vercel.app; deployment `dpl_8RjkafySpv3TFGiyCnpdaCsjPidt`.
+- [x] **Deployed to Vercel** — https://cartly-everyday-essentials.vercel.app; deployment `dpl_4sV3Zet3aBzvEPsj7yocBmRngWbq`.
 - [x] Verified public link, assets, main journey, nested-route refresh, and 390/1280 px layouts with zero console errors.
 
 ---

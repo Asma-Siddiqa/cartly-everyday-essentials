@@ -285,7 +285,7 @@ Local deployment configuration (`vercel.json` and `public/_redirects`) is presen
 | GitHub repository | Created public at https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
 | Pushed implementation commit | `d5fda9e66289ea6c9787472234706e02fc010258` on `main` |
 | Vercel project | `cartly-everyday-essentials` in scope `siddiqaasma04-gmailcoms-projects` |
-| Deployment ID | `dpl_8RjkafySpv3TFGiyCnpdaCsjPidt` |
+| Deployment ID | `dpl_4sV3Zet3aBzvEPsj7yocBmRngWbq` |
 | Production URL | https://cartly-everyday-essentials.vercel.app |
 | Public repository reachable | Pass |
 | Public home page at 1280 × 900 and 390 × 844 | Pass — 13 products rendered |
@@ -294,4 +294,4 @@ Local deployment configuration (`vercel.json` and `public/_redirects`) is presen
 | Public horizontal overflow at both viewports | 0 px |
 | Public console/page errors | 0 |
 
-The public checks used Microsoft Edge through Playwright against the deployed URL, not only the local preview. A later documentation-only commit records these links; the deployed application is the implementation commit listed above.
+The public checks used Microsoft Edge through Playwright against the deployed URL, not only the local preview. The final redeploy was made from `8c8ef8a04992a28f88e244b58b5514f10b86a4b3`, which changed documentation only; the application source is identical to implementation commit `d5fda9e66289ea6c9787472234706e02fc010258`. A later documentation-only commit records the final deployment ID.
