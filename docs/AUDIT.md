@@ -177,4 +177,4 @@ The table above records the state **before** remediation. The actions in that pl
 | README / DECISIONS / REQUIREMENTS / report | Complete | Stale commit, demo-control, placeholder, screenshot, and deployment claims corrected; PDF regenerated |
 | Public GitHub / deployment / ZIP / final commit hash | Complete | Public repo and Vercel URL verified at both viewports; implementation commit `5ed26cc`; repository-cleanup commit `a5ee9e6` untracks the PDF and tidies `.gitignore`; source ZIP regenerated from the tracked project files |
 
-**Remaining student actions:** do a brief visual pass in the student's own browser and submit on Google Classroom before the deadline. The implementation is committed, published, deployed, and packaged; later commits are documentation-only.
+
