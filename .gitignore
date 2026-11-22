@@ -29,8 +29,9 @@ playwright-report/
 test-results/
 screenshots/local/
 
-# Local assignment brief (not part of the application source)
+# Local assignment brief and generated reports (not part of the application source)
 Web Programming_A#02.pdf
+docs/*.pdf
 
+# Local deployment metadata
 .vercel
-.env*
