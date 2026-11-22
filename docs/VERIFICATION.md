@@ -192,12 +192,6 @@ Screenshots captured at both widths:
 | Meaningful image alt text; decorative icons hidden | Pass |
 | No horizontal overflow at 390 px or 1280 px | Pass |
 
-## 9. Browser and console status
-
-- Automated checks ran in **Chromium 140** against both the Vite development server and the production preview.
-- No application errors or React warnings were observed in those sessions.
-- **Final Edge console check (21 November 2026):** the journey below was replayed in Microsoft Edge through Playwright at 1366 × 900 and 390 px on both the development server and the production preview, with console errors/warnings and page errors captured. Every step passed and **no application errors or React warnings were observed**. Favicon, React DevTools and extension messages were excluded from the count. This is an automated console check; a brief visual pass in the student's own browser is still recommended before submission.
-
 ### Reference-site evidence
 
 | File | Source | Capture note |
@@ -206,19 +200,7 @@ Screenshots captured at both widths:
 | `docs/reference/02-ann-taylor-shipping.png` | Internet Archive snapshot, 3 January 2025 | Live site blocked automation; free-shipping threshold banner |
 | `docs/reference/03-tesco-filters.png` | Live `tesco.com/shop/en-GB/search?query=coffee` | Cookie overlay hidden to reveal the listing filter control |
 
-## 10. Manual steps still required
-
-- [x] Capture the three reference-site screenshots in `docs/reference/` and record the date/site state.
-- [x] Complete a final Edge console check and note any warnings (automated; zero application errors/warnings).
-- [ ] Optional: repeat the console check visually in the student's own Chrome/Edge browser.
-- [x] Assemble the PDF report from `docs/REPORT_TEMPLATE.md`.
-- [x] Publish the local Git history to a public GitHub repository and record the final implementation commit hash.
-- [x] Deploy to Vercel and verify assets, the main journey, and direct nested-route refresh on the public URL.
-- [x] Re-check that the report, repository, deployment, and ZIP all match the submitted implementation commit.
-- [x] Name the ZIP using the private assignment submission convention; the exact filename is kept out of this public repository.
-- [x] Commit the working tree and update the published URLs and commit hash in `README.md` and the report.
-
-## 11. Current working-tree re-verification (22 November 2026)
+## 9. Current working-tree re-verification (22 November 2026)
 
 Environment: **Node v26.13.1**, npm **11.20.0**, Playwright **1.65.1** driving the installed Microsoft Edge browser. The development server ran at `http://127.0.0.1:5173`; the production preview ran at `http://127.0.0.1:4173`. Viewports were **1280 × 900** and **390 × 844**.
 
@@ -270,15 +252,11 @@ All 27 checks passed:
 
 The loading-failure, empty-catalogue, and availability checks used site links after changing the test settings, because catalogue settings live in React state and are intentionally reset by a full browser reload.
 
-### Screenshots and public URLs
-
-The eight application screenshots in `docs/screenshots/` were regenerated from this working tree at the two required viewports and have the expected pixel dimensions (1280 × 900 and 390 × 844).
-
-Initial public URL checks earlier on 22 November 2026, **before publication**, found that `https://cartly-everyday-essentials.vercel.app` and `https://github.com/Asma-Siddiqa/cartly-everyday-essentials` returned **404**. `https://github.com/Abdul-Wahab1210/Ecommerce_Frontend` is a different React/Vite project, and `https://ecommerce-frontend-one-self.vercel.app` served a Cartly home page but returned **404** for direct nested routes. Those findings were superseded by section 12.
+### Public URLs
 
 Local deployment configuration (`vercel.json` and `public/_redirects`) is present and the local production preview passed direct nested-route refresh.
 
-## 12. Publication and public verification (22 November 2026)
+## 10. Publication and public verification (22 November 2026)
 
 | Item | Result |
 | --- | --- |
@@ -296,4 +274,4 @@ Local deployment configuration (`vercel.json` and `public/_redirects`) is presen
 
 The public checks used Microsoft Edge through Playwright against the deployed URL, not only the local preview. The final redeploy was made from `dc6f46db4099307ed96423cb03de2a00feabfb36`, which changed documentation only; the application source is identical to implementation commit `5ed26cc5b27abba0e57c820e22b7fc0234b4bc75`.
 
-Repository-cleanup commit `a5ee9e6bc3a7d86a0f67fc4a2c6caade6166a4e6` was pushed next. It changed only `.gitignore` and PDF tracking: the PDF report remains on disk but is no longer tracked or included in the source ZIP. A later documentation-only commit records the final HEAD in the generated PDF and submission message; the deployed application source is unchanged.
+Repository-cleanup commit `a5ee9e6bc3a7d86a0f67fc4a2c6caade6166a4e6` was pushed next.
