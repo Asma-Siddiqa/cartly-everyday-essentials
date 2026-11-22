@@ -1,16 +1,13 @@
 # Cartly — Assignment 02 Report
 
-**Course:** CS4032 Web Programming — Assignment 02 (Fall 2026)
+**Course:** CS4032 Web Programming — Assignment 02
 
 ## 1. Student and project details
 
 | Field | Value |
 | --- | --- |
 | Student name | Asma Siddiqa |
-| Roll number | 24i-2109 |
-| Section | CY-A |
 | Course | CS4032 Web Programming — Assignment 02 |
-| Semester | Fall 2026 |
 | Business name | Cartly |
 | Public repository | https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
 | Deployed website | https://cartly-everyday-essentials.vercel.app |
@@ -220,6 +217,6 @@ For each investigated improvement, include **user actions → expected behaviour
 - [x] PDF exported and checked for readability.
 - [x] Public repository and deployment open without access requests.
 - [x] Direct nested-route refresh verified on the deployment at 1280 px and 390 px.
-- [x] ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the untracked PDF report.
+- [x] Source ZIP prepared with the private submission filename, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the untracked PDF report.
 - [x] Report, repository, deployment, and ZIP all match the implementation/repository commits; later commits are documentation-only.
 - [ ] Submitted on Google Classroom before the deadline.

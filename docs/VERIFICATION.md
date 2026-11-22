@@ -215,7 +215,7 @@ Screenshots captured at both widths:
 - [x] Publish the local Git history to a public GitHub repository and record the final implementation commit hash.
 - [x] Deploy to Vercel and verify assets, the main journey, and direct nested-route refresh on the public URL.
 - [x] Re-check that the report, repository, deployment, and ZIP all match the submitted implementation commit.
-- [x] Name the ZIP `24i-2109_Asma-Siddiqa_CY-A_A#02.zip` using the student's real details.
+- [x] Name the ZIP using the private assignment submission convention; the exact filename is kept out of this public repository.
 - [x] Commit the working tree and update the published URLs and commit hash in `README.md` and the report.
 
 ## 11. Current working-tree re-verification (22 November 2026)
@@ -284,7 +284,7 @@ Local deployment configuration (`vercel.json` and `public/_redirects`) is presen
 | --- | --- |
 | GitHub repository | Created public at https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
 | Pushed implementation commit | `d5fda9e66289ea6c9787472234706e02fc010258` on `main` |
-| Vercel project | `cartly-everyday-essentials` in scope `siddiqaasma04-gmailcoms-projects` |
+| Vercel project | `cartly-everyday-essentials` on the student's Vercel account |
 | Deployment ID | `dpl_4sV3Zet3aBzvEPsj7yocBmRngWbq` |
 | Production URL | https://cartly-everyday-essentials.vercel.app |
 | Public repository reachable | Pass |

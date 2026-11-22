@@ -1,9 +1,7 @@
 # Cartly — React E-Commerce Frontend
 
-**Course:** CS4032 Web Programming — Assignment 02 (Fall 2026)
+**Course:** CS4032 Web Programming — Assignment 02
 **Student:** Asma Siddiqa
-**Roll number:** 24i-2109
-**Section:** CY-A
 **GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials
 **Deployment:** https://cartly-everyday-essentials.vercel.app
 **Final implementation commit:** `d5fda9e66289ea6c9787472234706e02fc010258`
@@ -252,7 +250,7 @@ src/
 
 ## Submission package
 
-The source ZIP is `../24i-2109_Asma-Siddiqa_CY-A_A#02.zip` (in the parent folder of this project). It contains the 93 tracked project files under `WebAssignment/` and excludes `node_modules/`, `dist/`, `.git/`, `.vercel/`, `.env*`, and `docs/*.pdf`. The PDF report remains a separate local submission at `docs/Cartly_Assignment_02_Report.pdf`; it is intentionally untracked. The exact final HEAD is recorded in the generated PDF and the final submission message.
+The source ZIP is stored outside this public repository using the private assignment submission naming convention. It contains the 93 tracked project files under `WebAssignment/` and excludes `node_modules/`, `dist/`, `.git/`, `.vercel/`, `.env*`, and `docs/*.pdf`. The PDF report remains a separate local submission at `docs/Cartly_Assignment_02_Report.pdf`; it is intentionally untracked and retains the private student details. The exact final HEAD is recorded in the generated PDF and the final submission message.
 
 ## Asset licensing
 

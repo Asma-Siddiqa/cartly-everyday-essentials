@@ -1,6 +1,6 @@
 # Cartly — Assignment 02 Requirements Checklist
 
-Source: `Web Programming_A#02.pdf` (CS4032, Fall 2026), National University of Computer and Emerging Sciences, Islamabad Campus.
+Source: `Web Programming_A#02.pdf` (CS4032), National University of Computer and Emerging Sciences, Islamabad Campus.
 
 Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires the student's own account/browser evidence.
 
@@ -232,7 +232,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 
 - [x] PDF report with required sections in order (student/project details, business profile, operating rules, reference investigation, decisions, implemented application screenshots, verification, limitations).
   - [x] Report source in `docs/REPORT_TEMPLATE.md`; exported PDF remains local at `docs/Cartly_Assignment_02_Report.pdf` and is intentionally untracked.
-- [x] Source-code ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the PDF report.
+- [x] Source-code ZIP prepared with the private submission filename, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the PDF report.
 - [x] Public GitHub repository link.
 - [x] Deployed website link.
 - [x] Final implementation commit `d5fda9e` and repository-cleanup commit `a453325` recorded; final HEAD recorded in the generated PDF and submission message.
