@@ -175,6 +175,6 @@ The table above records the state **before** remediation. The actions in that pl
 | M. Responsive design and accessibility | Complete | 27 Edge checks at 390 px and 1280 px passed with zero console errors; screenshots regenerated |
 | N. Three improvements are real | Complete | Autocomplete, delivery panel, and price filter remain customer-facing with no competitor/assignment promo text |
 | README / DECISIONS / REQUIREMENTS / report | Complete | Stale commit, demo-control, placeholder, screenshot, and deployment claims corrected; PDF regenerated |
-| Public GitHub / deployment / ZIP / final commit hash | Manual | Requires the student's accounts and final commit; no result is claimed here |
+| Public GitHub / deployment / ZIP / final commit hash | Complete | Public repo and Vercel URL verified at both viewports; implementation commit `d5fda9e`; source ZIP created with the required filename |
 
-**Remaining student actions:** commit the current working tree; publish to the chosen public repository; deploy from this project directory with the SPA rewrite; verify the public nested-route refresh; update the README/report URLs and final commit hash; create the named source ZIP; and do a brief visual pass in their own browser.
+**Remaining student actions:** do a brief visual pass in the student's own browser and submit on Google Classroom before the deadline. The implementation is committed, published, deployed, and packaged; later commits are documentation-only.

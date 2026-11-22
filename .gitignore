@@ -31,3 +31,6 @@ screenshots/local/
 
 # Local assignment brief (not part of the application source)
 Web Programming_A#02.pdf
+
+.vercel
+.env*

@@ -4,9 +4,9 @@
 **Student:** Asma Siddiqa
 **Roll number:** 24i-2109
 **Section:** CY-A
-**Intended GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials (not public at the time of the 22 Nov 2026 audit)
-**Deployment:** see "Deployment status" below — the previously recorded URL is not live
-**Last committed snapshot:** `2c0635fee977b3f7186e35c6890ada75e7758dfa` (the current working tree also contains the customer-facing copy cleanup and audit fixes; commit these before submission)
+**GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials
+**Deployment:** https://cartly-everyday-essentials.vercel.app
+**Final implementation commit:** `d5fda9e66289ea6c9787472234706e02fc010258` (a later documentation-only commit records the published links)
 
 Cartly is a fictional local online retailer for students and young professionals in Islamabad and Rawalpindi. It is a frontend-only React application with a complete shopping journey: browse the catalogue, search and filter, open a product, build a cart, complete a validated delivery form, review calculated totals, and reach a simulated order confirmation.
 
@@ -32,7 +32,7 @@ The project addresses three frontend problems investigated in existing retail si
 
 ## Requirements
 
-- Node.js 20 or newer (verified with Node 22.20.0 and npm 10.9.3)
+- Node.js 20 or newer (current verification used Node 26.13.1 and npm 11.20.0)
 - npm
 
 ## Installation and commands
@@ -190,7 +190,7 @@ This is a frontend assignment prototype. It has no backend, authentication, real
 - Reference-site evidence is in `docs/reference/`. eXtra and Tesco were captured live on 21 November 2026; Ann Taylor blocked automated access, so an archived snapshot (3 January 2025) is used with that limitation stated in `docs/INVESTIGATION.md`.
 - The order confirmation is retrievable only from the same browser's `localStorage`; orders are not shared across devices.
 - On 22 November 2026, 27 automated browser checks passed in Microsoft Edge at 1280 × 900 and 390 × 844 with no application errors or React warnings; production-preview nested-route refresh also passed. See `docs/VERIFICATION.md` section 11.
-- The public repository and deployment must be pushed/verified with the student's own accounts; see "Deployment preparation" below.
+- The public repository and deployment were verified on 22 November 2026; see "Deployment status" below.
 
 ## Project structure
 
@@ -249,6 +249,10 @@ src/
 - `docs/REPORT_TEMPLATE.md` — PDF report source with required sections and embedded evidence.
 - `docs/screenshots/` — locally captured application screenshots at 1280 px and 390 px.
 
+## Submission package
+
+The source ZIP is `../24i-2109_Asma-Siddiqa_CY-A_A#02.zip` (in the parent folder of this project). It contains the 96 tracked project files under `WebAssignment/` and excludes `node_modules/`, `dist/`, `.git/`, `.vercel/`, and `.env*` files.
+
 ## Asset licensing
 
 Product photographs are locally stored Unsplash images, used under the [Unsplash License](https://unsplash.com/license). The files are local so the catalogue does not depend on third-party hotlinks, and a `ProductImage` fallback covers failed loads. Fonts are locally bundled through Fontsource.
@@ -259,12 +263,13 @@ Cartly branding, copy, data, and components are original for this assignment; no
 
 ## Deployment
 
-### Deployment status (checked 22 November 2026)
+### Deployment status (verified 22 November 2026)
 
-- `https://cartly-everyday-essentials.vercel.app` returned **404** and should not be submitted as a live link.
-- The reachable URL mentioned in the task, `https://ecommerce-frontend-one-self.vercel.app`, serves a Cartly page, but direct requests to `/about` and `/products/:id` returned **404**. That build is either older or deployed without the SPA rewrite.
-- The local `vercel.json` rewrite and `public/_redirects` are correct for this project, but the deployment must be made **from this project directory** (or with Vercel Root Directory set to it) before nested-route refresh works publicly.
-- Do not claim a working deployment until the steps below are completed and a direct `/products/:id` refresh succeeds.
+- Public repository: https://github.com/Asma-Siddiqa/cartly-everyday-essentials
+- Production deployment: https://cartly-everyday-essentials.vercel.app
+- Deployment ID: `dpl_8RjkafySpv3TFGiyCnpdaCsjPidt`
+- Direct browser checks at 1280 × 900 and 390 × 844 confirmed the home catalogue, `/products/glide-wireless-mouse`, and `/about?test=1`; **zero console errors or React warnings** were observed.
+- `vercel.json` rewrites all paths to `/index.html`, so nested-route refresh works on the public URL. `public/_redirects` provides the equivalent rule for Netlify.
 
 The production build is deployment-ready. Hosts that support SPA rewrites are suitable.
 
@@ -281,4 +286,4 @@ The production build is deployment-ready. Hosts that support SPA rewrites are su
 2. `public/_redirects` contains `/* /index.html 200`, which Vite copies into the build.
 3. Verify direct nested-route refresh after deployment.
 
-After deploying, replace the placeholder status above with the real public URL and update `docs/REPORT_TEMPLATE.md` (then regenerate the PDF) before submission.
+The public deployment has been verified. If you redeploy later, re-run the direct nested-route check and update the deployment ID above.

@@ -6,7 +6,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 
 > **Student details are filled in** in `README.md` and `docs/REPORT_TEMPLATE.md` from the existing project. The public repository and deployment URLs should be re-checked after the student pushes and deploys the final commit.
 
-**Current verification snapshot (22 November 2026):** `npm test` reports **41/41 passing**; `npm run build` succeeds. 27 automated Edge checks cover all routes, the full journey, boundaries, persistence, loading/error states, and 390/1280 px layouts with zero console errors. Public GitHub publication, public deployment, the source ZIP, and a final visual pass in the student's own browser still require the student. Details: `docs/VERIFICATION.md` section 11 and `docs/AUDIT.md`.
+**Current verification snapshot (22 November 2026):** `npm test` reports **41/41 passing**; `npm run build` succeeds. 27 automated Edge checks cover all routes, the full journey, boundaries, persistence, loading/error states, and 390/1280 px layouts with zero console errors. Public GitHub publication and Vercel deployment are complete and their nested routes were verified at both viewports. Only a brief visual pass in the student's own browser and the final Classroom submission remain. Details: `docs/VERIFICATION.md` sections 11–12 and `docs/AUDIT.md`.
 
 ---
 
@@ -213,8 +213,8 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - [x] Commit messages explain changes, and commits use genuine current timestamps (no backdating).
 - [x] Source, dependency files, lockfile, README, DECISIONS, tests, and assets included.
 - [x] `node_modules`, build output, and secrets excluded via `.gitignore`.
-- [ ] **Publish to a public GitHub repository and record the final commit hash** — manual account step; local Git history is ready.
-- [manual] Push repository and supply public URL in README/report.
+- [x] **Published to a public GitHub repository** — https://github.com/Asma-Siddiqa/cartly-everyday-essentials; implementation commit `d5fda9e66289ea6c9787472234706e02fc010258` pushed to `main`.
+- [x] Public URL supplied in README/report.
 - [manual] The repository history was assembled from the completed implementation using real timestamps. It does not recreate a repository created at the very start of development, and no history was fabricated or backdated.
 
 ### 8.2 Deployment
@@ -223,8 +223,8 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - [x] SPA rewrite configuration included for Vercel (`vercel.json`) and Netlify (`public/_redirects`).
 - [x] Relative/imported assets so hashed assets load after deployment.
 - [x] Nested-route refresh support configured with SPA rewrites.
-- [ ] **Deploy to a public hosting account** — no credentials supplied. Manual steps documented in README.
-- [manual] Verify public link, assets, main journey, nested-route refresh, and final commit match.
+- [x] **Deployed to Vercel** — https://cartly-everyday-essentials.vercel.app; deployment `dpl_8RjkafySpv3TFGiyCnpdaCsjPidt`.
+- [x] Verified public link, assets, main journey, nested-route refresh, and 390/1280 px layouts with zero console errors.
 
 ---
 
@@ -232,10 +232,10 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 
 - [x] PDF report with required sections in order (student/project details, business profile, operating rules, reference investigation, decisions, implemented application screenshots, verification, limitations).
   - [x] Report source in `docs/REPORT_TEMPLATE.md`; exported PDF at `docs/Cartly_Assignment_02_Report.pdf`.
-- [ ] Source-code ZIP named `RollNo_Name_Section_A#02.zip` (student-specific; not generated to avoid inventing details).
-- [ ] Public GitHub repository link.
-- [ ] Deployed website link.
-- [ ] Final commit hash.
+- [x] Source-code ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules`, `dist`, `.git`, and local Vercel files.
+- [x] Public GitHub repository link.
+- [x] Deployed website link.
+- [x] Final implementation commit hash.
 - [x] Source, local data, assets, styles, test file, dependency files, lockfile, README, and DECISIONS included.
 - [x] No `node_modules`, build output, or secrets committed.
 - [x] Report/repository/deployment/ZIP consistency plan documented.
@@ -255,8 +255,8 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 | Responsiveness and accessibility | 8 | 390 px and 1280 px, semantic controls, keyboard access, labels, focus, live feedback | [x] |
 | Edge cases and rule tests | 7 | Recovery states, hidden test controls, Node tests with boundary cases | [x] |
 | Investigation and decisions | 7 | Three problems, decisions with alternatives/tradeoffs/code | [x] |
-| GitHub and documentation | 3 | Local milestone history, README, DECISIONS, reproducible setup | [manual] publish |
-| Deployment | 3 | Build + SPA rewrite prep; public deployment pending account access | [manual] |
+| GitHub and documentation | 3 | Public milestone history, README, DECISIONS, reproducible setup | [x] |
+| Deployment | 3 | Vercel production deployment with verified nested-route refresh | [x] |
 | Individual viva | 15 | Concept map and code organization support explanation; must be studied by student | [manual] |
 
 ---
@@ -267,5 +267,5 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - No real courier integration; delivery times are estimates.
 - Reference-site observations are recorded in `docs/INVESTIGATION.md`; the Ann Taylor image is an archived snapshot and the Tesco capture had its cookie overlay hidden. Do not claim those problems were re-verified on the live sites after the capture date.
 - Product names, brands, and business details are fictional; product photos are licensed stock images.
-- Deployment and GitHub publication require the student's accounts and credentials.
-- The final commit hash in the report/README must be updated after the student commits the remaining working-tree changes.
+- GitHub publication and deployment were completed with the student's authenticated accounts on 22 November 2026.
+- The report and README record the final implementation commit; later commits are documentation-only.

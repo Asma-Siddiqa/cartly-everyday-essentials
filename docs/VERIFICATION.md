@@ -212,11 +212,11 @@ Screenshots captured at both widths:
 - [x] Complete a final Edge console check and note any warnings (automated; zero application errors/warnings).
 - [ ] Optional: repeat the console check visually in the student's own Chrome/Edge browser.
 - [x] Assemble the PDF report from `docs/REPORT_TEMPLATE.md`.
-- [ ] Publish the local Git history to a public GitHub repository and record the final commit hash.
-- [ ] Deploy to Vercel/Netlify and verify assets, the main journey, and direct nested-route refresh.
-- [ ] Re-check that the report, repository, deployment, and ZIP all match the submitted commit.
-- [ ] Name the ZIP `24i-2109_Asma-Siddiqa_CY-A_A#02.zip` using the student's real details.
-- [ ] Commit the current working tree and update the commit hash in `README.md` and the report.
+- [x] Publish the local Git history to a public GitHub repository and record the final implementation commit hash.
+- [x] Deploy to Vercel and verify assets, the main journey, and direct nested-route refresh on the public URL.
+- [x] Re-check that the report, repository, deployment, and ZIP all match the submitted implementation commit.
+- [x] Name the ZIP `24i-2109_Asma-Siddiqa_CY-A_A#02.zip` using the student's real details.
+- [x] Commit the working tree and update the published URLs and commit hash in `README.md` and the report.
 
 ## 11. Current working-tree re-verification (22 November 2026)
 
@@ -274,11 +274,24 @@ The loading-failure, empty-catalogue, and availability checks used site links af
 
 The eight application screenshots in `docs/screenshots/` were regenerated from this working tree at the two required viewports and have the expected pixel dimensions (1280 × 900 and 390 × 844).
 
-Public URL checks on 22 November 2026:
+Initial public URL checks earlier on 22 November 2026, **before publication**, found that `https://cartly-everyday-essentials.vercel.app` and `https://github.com/Asma-Siddiqa/cartly-everyday-essentials` returned **404**. `https://github.com/Abdul-Wahab1210/Ecommerce_Frontend` is a different React/Vite project, and `https://ecommerce-frontend-one-self.vercel.app` served a Cartly home page but returned **404** for direct nested routes. Those findings were superseded by section 12.
 
-- `https://cartly-everyday-essentials.vercel.app` returned **404**.
-- `https://github.com/Asma-Siddiqa/cartly-everyday-essentials` returned **404**.
-- `https://github.com/Abdul-Wahab1210/Ecommerce_Frontend` is reachable, but its recorded build is a different React/Vite project.
-- `https://ecommerce-frontend-one-self.vercel.app` served a Cartly home page, but direct requests to `/about` and `/products/:id` returned **404**, so it must not be submitted as a verified nested-route deployment.
+Local deployment configuration (`vercel.json` and `public/_redirects`) is present and the local production preview passed direct nested-route refresh.
 
-Local deployment configuration (`vercel.json` and `public/_redirects`) is present and the local production preview passed direct nested-route refresh. Public deployment and repository publication remain student actions.
+## 12. Publication and public verification (22 November 2026)
+
+| Item | Result |
+| --- | --- |
+| GitHub repository | Created public at https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
+| Pushed implementation commit | `d5fda9e66289ea6c9787472234706e02fc010258` on `main` |
+| Vercel project | `cartly-everyday-essentials` in scope `siddiqaasma04-gmailcoms-projects` |
+| Deployment ID | `dpl_8RjkafySpv3TFGiyCnpdaCsjPidt` |
+| Production URL | https://cartly-everyday-essentials.vercel.app |
+| Public repository reachable | Pass |
+| Public home page at 1280 × 900 and 390 × 844 | Pass — 13 products rendered |
+| Public direct `/products/glide-wireless-mouse` refresh | Pass at both viewports |
+| Public `/about?test=1` route | Pass at both viewports |
+| Public horizontal overflow at both viewports | 0 px |
+| Public console/page errors | 0 |
+
+The public checks used Microsoft Edge through Playwright against the deployed URL, not only the local preview. A later documentation-only commit records these links; the deployed application is the implementation commit listed above.
