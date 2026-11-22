@@ -4,7 +4,7 @@ Source: `Web Programming_A#02.pdf` (CS4032, Fall 2026), National University of C
 
 Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires the student's own account/browser evidence.
 
-> **Student details are filled in** in `README.md` and `docs/REPORT_TEMPLATE.md` from the existing project. The public repository and deployment URLs should be re-checked after the student pushes and deploys the final commit.
+> **Student details are filled in** in `README.md` and `docs/REPORT_TEMPLATE.md` from the existing project. The public repository and deployment URLs were verified on 22 November 2026; the final repository-cleanup commit `a453325` is pushed to `main`, and the final HEAD is recorded in the generated PDF and submission message.
 
 **Current verification snapshot (22 November 2026):** `npm test` reports **41/41 passing**; `npm run build` succeeds. 27 automated Edge checks cover all routes, the full journey, boundaries, persistence, loading/error states, and 390/1280 px layouts with zero console errors. Public GitHub publication and Vercel deployment are complete and their nested routes were verified at both viewports. Only a brief visual pass in the student's own browser and the final Classroom submission remain. Details: `docs/VERIFICATION.md` sections 11–12 and `docs/AUDIT.md`.
 
@@ -231,14 +231,14 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 ## 9. Submission requirements
 
 - [x] PDF report with required sections in order (student/project details, business profile, operating rules, reference investigation, decisions, implemented application screenshots, verification, limitations).
-  - [x] Report source in `docs/REPORT_TEMPLATE.md`; exported PDF at `docs/Cartly_Assignment_02_Report.pdf`.
-- [x] Source-code ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules`, `dist`, `.git`, and local Vercel files.
+  - [x] Report source in `docs/REPORT_TEMPLATE.md`; exported PDF remains local at `docs/Cartly_Assignment_02_Report.pdf` and is intentionally untracked.
+- [x] Source-code ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the PDF report.
 - [x] Public GitHub repository link.
 - [x] Deployed website link.
-- [x] Final implementation commit hash.
+- [x] Final implementation commit `d5fda9e` and repository-cleanup commit `a453325` recorded; final HEAD recorded in the generated PDF and submission message.
 - [x] Source, local data, assets, styles, test file, dependency files, lockfile, README, and DECISIONS included.
 - [x] No `node_modules`, build output, or secrets committed.
-- [x] Report/repository/deployment/ZIP consistency plan documented.
+- [x] Report/repository/deployment/ZIP consistency verified; PDF is a separate untracked local submission.
 - [manual] Submit on Google Classroom before deadline.
 - [manual] Prepare for 10-minute viva using README concept map, DECISIONS, and verification notes.
 

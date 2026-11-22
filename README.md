@@ -6,7 +6,8 @@
 **Section:** CY-A
 **GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials
 **Deployment:** https://cartly-everyday-essentials.vercel.app
-**Final implementation commit:** `d5fda9e66289ea6c9787472234706e02fc010258` (a later documentation-only commit records the published links)
+**Final implementation commit:** `d5fda9e66289ea6c9787472234706e02fc010258`
+**Final repository commit:** `a45332533fdb9c11806cb5923542b99a16bc5782` (untracks the PDF report and tidies `.gitignore`; a later documentation-only commit records the final HEAD in the generated report and submission message)
 
 Cartly is a fictional local online retailer for students and young professionals in Islamabad and Rawalpindi. It is a frontend-only React application with a complete shopping journey: browse the catalogue, search and filter, open a product, build a cart, complete a validated delivery form, review calculated totals, and reach a simulated order confirmation.
 
@@ -251,7 +252,7 @@ src/
 
 ## Submission package
 
-The source ZIP is `../24i-2109_Asma-Siddiqa_CY-A_A#02.zip` (in the parent folder of this project). It contains the 96 tracked project files under `WebAssignment/` and excludes `node_modules/`, `dist/`, `.git/`, `.vercel/`, and `.env*` files.
+The source ZIP is `../24i-2109_Asma-Siddiqa_CY-A_A#02.zip` (in the parent folder of this project). It contains the 93 tracked project files under `WebAssignment/` and excludes `node_modules/`, `dist/`, `.git/`, `.vercel/`, `.env*`, and `docs/*.pdf`. The PDF report remains a separate local submission at `docs/Cartly_Assignment_02_Report.pdf`; it is intentionally untracked. The exact final HEAD is recorded in the generated PDF and the final submission message.
 
 ## Asset licensing
 

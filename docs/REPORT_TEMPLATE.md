@@ -14,7 +14,8 @@
 | Business name | Cartly |
 | Public repository | https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
 | Deployed website | https://cartly-everyday-essentials.vercel.app |
-| Final implementation commit | `d5fda9e66289ea6c9787472234706e02fc010258` (a later documentation-only commit records the published links) |
+| Final implementation commit | `d5fda9e66289ea6c9787472234706e02fc010258` |
+| Final repository commit | `a45332533fdb9c11806cb5923542b99a16bc5782` — untracks the PDF report and tidies `.gitignore`; a later documentation-only commit records the final HEAD |
 | Date | 22 November 2026 |
 
 ## 2. Business profile
@@ -211,7 +212,7 @@ For each investigated improvement, include **user actions → expected behaviour
 
 ## 9. Submission checklist
 
-- [x] Student name, roll number, section, public repository, deployment URL, and final implementation commit are recorded.
+- [x] Student name, roll number, section, public repository, deployment URL, implementation commit, and repository-cleanup commit are recorded.
 - [x] Three reference screenshots inserted with dates and captions.
 - [x] Three decisions include alternative, reason, tradeoff, code location, and evidence.
 - [x] Application screenshots inserted with design annotations.
@@ -219,6 +220,6 @@ For each investigated improvement, include **user actions → expected behaviour
 - [x] PDF exported and checked for readability.
 - [x] Public repository and deployment open without access requests.
 - [x] Direct nested-route refresh verified on the deployment at 1280 px and 390 px.
-- [x] ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules`, `dist`, `.git`, and local Vercel files.
-- [x] Report, repository, deployment, and ZIP all match the implementation commit; later commits are documentation-only.
+- [x] ZIP named `24i-2109_Asma-Siddiqa_CY-A_A#02.zip`, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the untracked PDF report.
+- [x] Report, repository, deployment, and ZIP all match the implementation/repository commits; later commits are documentation-only.
 - [ ] Submitted on Google Classroom before the deadline.

@@ -294,4 +294,6 @@ Local deployment configuration (`vercel.json` and `public/_redirects`) is presen
 | Public horizontal overflow at both viewports | 0 px |
 | Public console/page errors | 0 |
 
-The public checks used Microsoft Edge through Playwright against the deployed URL, not only the local preview. The final redeploy was made from `8c8ef8a04992a28f88e244b58b5514f10b86a4b3`, which changed documentation only; the application source is identical to implementation commit `d5fda9e66289ea6c9787472234706e02fc010258`. A later documentation-only commit records the final deployment ID.
+The public checks used Microsoft Edge through Playwright against the deployed URL, not only the local preview. The final redeploy was made from `8c8ef8a04992a28f88e244b58b5514f10b86a4b3`, which changed documentation only; the application source is identical to implementation commit `d5fda9e66289ea6c9787472234706e02fc010258`.
+
+Repository-cleanup commit `a45332533fdb9c11806cb5923542b99a16bc5782` was pushed next. It changed only `.gitignore` and PDF tracking: the PDF report remains on disk but is no longer tracked or included in the source ZIP. A later documentation-only commit records the final HEAD in the generated PDF and submission message; the deployed application source is unchanged.
