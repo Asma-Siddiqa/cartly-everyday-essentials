@@ -102,18 +102,6 @@ Each problem affects a different part of the journey: **discovery**, **delivery 
 
 ---
 
-## Evidence checklist for the report
-
-For each problem, the PDF report needs:
-
-- [x] Reference website URL visible in the screenshot or caption.
-- [x] A dated screenshot of the relevant interface.
-- [x] The customer task being attempted.
-- [x] Numbered steps to reproduce the difficulty.
-- [x] A clear separation between **observed** interface behaviour and **inferred** business consequence.
-- [x] A matching Cartly screenshot showing the improvement.
-- [x] A caption linking the evidence to the decision entry.
-
 Capture set actually used:
 
 | File | Source | Capture note |
