@@ -187,36 +187,3 @@ The business-rule test is in `src/lib/__tests__/businessRules.test.js` and uses 
 | Image failure | Fallback shown | Pass |
 | 390 px / 1280 px | No page-wide horizontal overflow | Pass |
 | Keyboard journey | Search, filters, cart, form, dialog usable | Pass |
-
-### Improvement evidence
-
-For each investigated improvement, include **user actions → expected behaviour → observed behaviour** and one screenshot. The details are in `DECISIONS.md` and `docs/VERIFICATION.md`.
-
-### Browser status
-
-- Automated checks passed on the development server, production preview, and public deployment in Microsoft Edge (Playwright 1.65.1).
-- On 22 November 2026, 27 named browser checks passed at 1280 × 900 and 390 × 844 with **zero application errors or React warnings**. Public direct product and test-route refreshes also passed at both viewports. Full results are in `docs/VERIFICATION.md` sections 11–12. A brief visual pass in the student's own browser is still recommended.
-- Loading-failure, empty-catalogue, and availability scenarios are triggered from the hidden test panel at `/about?test=1`.
-
-## 8. Limitations
-
-- Frontend-only prototype: no backend, authentication, real payment, email/SMS, courier, or live stock.
-- Orders are simulated and stored only in the current browser; they are not shared across devices.
-- Delivery dates are estimates, not courier commitments.
-- Ann Taylor and Tesco blocked automated live capture; the Ann Taylor image is an archived snapshot and the Tesco cookie overlay was hidden to reveal the underlying listing. Both facts are stated in the captions.
-- Product names/brands are fictional; photos are licensed stock images.
-- The public repository and deployment were verified on 22 November 2026; the deployed application is the implementation commit listed in section 1.
-
-## 9. Submission checklist
-
-- [x] Student name, roll number, section, public repository, deployment URL, implementation commit, and repository-cleanup commit are recorded.
-- [x] Three reference screenshots inserted with dates and captions.
-- [x] Three decisions include alternative, reason, tradeoff, code location, and evidence.
-- [x] Application screenshots inserted with design annotations.
-- [x] Verification results match the submitted commit.
-- [x] PDF exported and checked for readability.
-- [x] Public repository and deployment open without access requests.
-- [x] Direct nested-route refresh verified on the deployment at 1280 px and 390 px.
-- [x] Source ZIP prepared with the private submission filename, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the untracked PDF report.
-- [x] Report, repository, deployment, and ZIP all match the implementation/repository commits; later commits are documentation-only.
-- [ ] Submitted on Google Classroom before the deadline.
