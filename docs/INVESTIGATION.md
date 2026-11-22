@@ -2,8 +2,6 @@
 
 This document records the three reference problems that shaped Cartly and the screenshots captured for the report. Cartly does **not** copy reference-site branding, layouts, assets, or code.
 
-> **Evidence status (captured 21 November 2026):** each problem below now has an actual browser screenshot in `docs/reference/`. Live access was available for eXtra. Ann Taylor and Tesco blocked automated access on the live sites (bot protection / repeated `403 Access Denied`), so the Ann Taylor image is an archived snapshot from the Internet Archive and the Tesco image is a live capture from the first successful load with the cookie overlay hidden. Their captions state this limitation honestly. These are observation records, not measurements.
-
 ## Summary
 
 | # | Reference site | Problem area | Affected customer task | Cartly response |
@@ -109,5 +107,3 @@ Capture set actually used:
 | `docs/reference/01-extra-search.png` | Live `extra.com/en-sa` | 21 November 2026; query `head` typed; suggestion dropdown visible |
 | `docs/reference/02-ann-taylor-shipping.png` | Internet Archive snapshot, 3 January 2025 | 21 November 2026; live site blocked automation; banner shows free-shipping threshold |
 | `docs/reference/03-tesco-filters.png` | Live `tesco.com/shop/en-GB/search?query=coffee` | 21 November 2026; cookie overlay hidden to reveal the listing filter control |
-
-All captures used a 1366 × 900 browser viewport, were taken without signing in, and contain no personal data. Where a live site blocked automated access, the limitation is recorded in the caption; the original investigation notes are used only as historical context.
