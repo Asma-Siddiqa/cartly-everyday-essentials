@@ -56,7 +56,7 @@ Each problem affects a different part of the journey: **discovery**, **delivery 
 
 **Possible business consequence (inference, not a measured statistic).** Late shipping charges create an unpleasant surprise at checkout and can cause abandonment. Shoppers outside the delivery area may spend time building an order that cannot be completed.
 
-**Proposed improvement.** Cartly shows a delivery panel next to the product's price and stock, before the add-to-cart action. It states the delivery fee, the Rs. 2,000 free-delivery threshold, the exact amount remaining, the estimate, and the supported Islamabad/Rawalpindi areas. Cart and checkout repeat the calculation from the same rule module, and checkout blocks unsupported areas.
+**Proposed improvement.** Cartly shows a delivery panel in the product purchase area, immediately below the price, stock, quantity, and add-to-cart controls. It states the delivery fee, the Rs. 2,000 free-delivery threshold, the exact amount remaining, the estimate, and the supported Islamabad/Rawalpindi areas. Cart and checkout repeat the calculation from the same rule module, and checkout blocks unsupported areas.
 
 **Implementation evidence.**
 - `src/components/product/DeliveryPanel.jsx`

@@ -23,7 +23,7 @@ export function Footer() {
               </span>
               <span className="inline-flex items-center gap-2">
                 <ShieldCheck aria-hidden="true" className="h-4 w-4 text-brand-blue" />
-                Simulated checkout
+                Cash on delivery
               </span>
             </div>
           </div>
@@ -57,8 +57,7 @@ export function Footer() {
           <div>
             <h2 className="text-xs font-bold uppercase tracking-[0.18em] text-white/45">Say hello</h2>
             <p className="mt-4 text-sm leading-relaxed text-white/65">
-              Questions about an order or a delivery area? This student project simulates the storefront
-              and does not process real payments.
+              Questions about an order or a delivery area? Get in touch and we'll be happy to help.
             </p>
             <a
               href="mailto:hello@cartly.example"
@@ -69,14 +68,13 @@ export function Footer() {
             </a>
             <p className="mt-3 inline-flex items-center gap-2 text-xs text-white/45">
               <Instagram aria-hidden="true" className="h-4 w-4" />
-              @cartly.pk — fictional demo profile
+              @cartly.pk
             </p>
           </div>
         </div>
 
         <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} Cartly. A fictional business built for Web Programming Assignment 02.</p>
-          <p>Orders are simulated. No payment is collected.</p>
+          <p>© {new Date().getFullYear()} Cartly. All rights reserved.</p>
         </div>
       </div>
     </footer>

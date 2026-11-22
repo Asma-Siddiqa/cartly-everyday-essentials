@@ -1,6 +1,6 @@
 # Three Frontend Decisions
 
-These decisions respond to the three investigated problems. Each entry records the problem, decision, one reasonable alternative, reason, tradeoff, code location, and reproduction evidence. Reference-site screenshots are the student's responsibility; see `docs/INVESTIGATION.md`.
+These decisions respond to the three investigated problems. Each entry records the problem, decision, one reasonable alternative, reason, tradeoff, code location, and reproduction evidence. Reference-site screenshots, their sources, and their limitations are recorded in `docs/INVESTIGATION.md`.
 
 ---
 
@@ -34,7 +34,7 @@ These decisions respond to the three investigated problems. Each entry records t
 
 **Problem.** In the investigated Ann Taylor product experience, shipping charges and eligibility were difficult to establish before checkout. Customers could choose an item without knowing the delivered cost or whether delivery was available to them, creating a late surprise in the journey.
 
-**Decision.** Add a dedicated delivery panel to the product page, placed before the add-to-cart action. It states the current delivery charge for the product price, the Rs. 2,000 free-delivery threshold, the exact amount still needed for free delivery, the delivery estimate, and the supported Islamabad/Rawalpindi areas. The cart shows the same fee, a free-delivery progress message, and supported-area reminder; checkout repeats the fee and rejects unsupported areas. All values come from one exported rule module rather than duplicated literals.
+**Decision.** Add a dedicated delivery panel to the product page, placed immediately below the price, quantity, and add-to-cart controls so the delivered cost stays in the purchase area. It states the current delivery charge for the product price, the Rs. 2,000 free-delivery threshold, the exact amount still needed for free delivery, the delivery estimate, and the supported Islamabad/Rawalpindi areas. The cart shows the same fee, a free-delivery progress message, and supported-area reminder; checkout repeats the fee and rejects unsupported areas. All values come from one exported rule module rather than duplicated literals.
 
 **Alternative.** Show delivery information only in the cart or a shipping modal after the customer has added the item. This reduces product-page density but keeps the critical condition late in the decision process.
 
@@ -46,7 +46,7 @@ These decisions respond to the three investigated problems. Each entry records t
 - `src/components/product/DeliveryPanel.jsx` — visible fee, threshold, gap, estimate, and area list.
 - `src/lib/businessRules.js` — `getDeliveryFee`, `getAmountUntilFreeDelivery`, `calculateOrderTotals`, `isSupportedArea`.
 - `src/data/deliveryAreas.js` — explicit supported cities and areas.
-- `src/pages/ProductDetailsPage.jsx` — places the panel before the primary add-to-cart action.
+- `src/pages/ProductDetailsPage.jsx` — places the panel directly after the purchase card, in the same purchase area.
 - `src/pages/CartPage.jsx`, `src/pages/CheckoutPage.jsx` — repeat the calculation and eligibility checks.
 
 **Evidence and reproduction.**

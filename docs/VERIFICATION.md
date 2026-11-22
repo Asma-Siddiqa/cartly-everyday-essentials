@@ -8,7 +8,7 @@ Verified on **19 November 2026** against the local submitted snapshot.
 - Browser automation: **Playwright Chromium 140**, development server and production preview
 - Viewports: **390 px** and **1280 px**
 
-> **Updated 21 November 2026:** the reference screenshots and the final Edge console pass are complete. The public GitHub repository and public deployment are the only remaining external steps; see the end of this document.
+> **Updated 22 November 2026:** the test controls are now reachable at `/about?test=1` after being hidden from the default customer UI. The re-verification results for this working tree are recorded in section 11. The public GitHub repository, public deployment, and source ZIP are the remaining external steps.
 
 ## 1. Automated checks
 
@@ -147,9 +147,9 @@ Keys used: `cartly:cart:v1`, `cartly:compare:v1`, `cartly:orders:v1`.
 | Scenario | Expected | Observed |
 | --- | --- | --- |
 | Initial catalogue load | Skeleton/status message, then products | Pass |
-| **Simulate loading failure** control | Error panel with retry | Pass |
+| **Simulate load failure (next request)** at `/about?test=1` | Error panel with retry | Pass |
 | Retry after simulated failure | Catalogue loads successfully on the next request | Pass |
-| **Empty catalogue** control | Empty-dataset message with reset action | Pass |
+| **Simulate an empty catalogue** at `/about?test=1` | Empty-dataset message with reset action | Pass |
 | Search with no match | Separate no-match message with clear action | Pass |
 | Invalid product/order URL | Useful recovery links | Pass |
 | Image load failure | `ProductImage` fallback | Pass |
@@ -216,3 +216,69 @@ Screenshots captured at both widths:
 - [ ] Deploy to Vercel/Netlify and verify assets, the main journey, and direct nested-route refresh.
 - [ ] Re-check that the report, repository, deployment, and ZIP all match the submitted commit.
 - [ ] Name the ZIP `24i-2109_Asma-Siddiqa_CY-A_A#02.zip` using the student's real details.
+- [ ] Commit the current working tree and update the commit hash in `README.md` and the report.
+
+## 11. Current working-tree re-verification (22 November 2026)
+
+Environment: **Node v26.13.1**, npm **11.20.0**, Playwright **1.65.1** driving the installed Microsoft Edge browser. The development server ran at `http://127.0.0.1:5173`; the production preview ran at `http://127.0.0.1:4173`. Viewports were **1280 × 900** and **390 × 844**.
+
+### Automated results
+
+| Check | Command / method | Result |
+| --- | --- | --- |
+| Rule/unit tests | `npm test` | **41 tests, 41 passing, 0 failing** |
+| Production build | `npm run build` | Success; **1640 modules transformed**, `dist/` generated |
+| Development-server browser audit | Playwright/Edge, 27 named checks | **27 passed, 0 failed** |
+| Console/page errors during that audit | Captured on every check | **0 application errors or React warnings** |
+| Production preview smoke check | Direct refresh of `/`, `/products/:id`, `/about?test=1` | **All HTTP 200**, expected content rendered |
+| Production preview 390 px product page | Document overflow check | **0 px overflow** |
+| Production preview console/page errors | Captured across all preview pages | **0** |
+
+### Browser audit details
+
+All 27 checks passed:
+
+| # | Check | Result |
+| --- | --- | --- |
+| 1 | Home loads with 13 products | Pass |
+| 2 | No horizontal overflow at 1280 px on home | Pass |
+| 3 | No horizontal overflow at 390 px on home | Pass |
+| 4 | No horizontal overflow at 390 px on About | Pass |
+| 5 | All six routes plus an invalid URL render recovery content | Pass |
+| 6 | Direct refresh of a nested product route returns HTTP 200 | Pass |
+| 7 | Autocomplete keyboard selection (ArrowDown/Enter) | Pass |
+| 8 | Combined search, filters, sort, and URL persistence across refresh | Pass |
+| 9 | No-match search message | Pass |
+| 10 | Invalid price-range message | Pass |
+| 11 | Back/Forward restores filter state | Pass |
+| 12 | Add to cart updates the header count | Pass |
+| 13 | Cart increase/decrease/remove | Pass |
+| 14 | Product quantity cannot exceed stock | Pass |
+| 15 | Out-of-stock product cannot be added | Pass |
+| 16 | Cart restores after reload | Pass |
+| 17 | Corrupted `localStorage` does not crash the app | Pass |
+| 18 | Delivery fee shown below the Rs. 2,000 threshold | Pass |
+| 19 | Invalid checkout submission is blocked with field errors | Pass |
+| 20 | Valid checkout reaches simulated confirmation | Pass |
+| 21 | Unsupported delivery area is blocked | Pass |
+| 22 | Test controls hidden by default and visible at `/about?test=1` | Pass |
+| 23 | Simulated loading failure shows retry; retry recovers | Pass |
+| 24 | Empty-catalogue state and reset | Pass |
+| 25 | Availability scenario changes the stock limit | Pass |
+| 26 | 390 px mobile menu navigation | Pass |
+| 27 | 390 px checkout usable with no overflow | Pass |
+
+The loading-failure, empty-catalogue, and availability checks used site links after changing the test settings, because catalogue settings live in React state and are intentionally reset by a full browser reload.
+
+### Screenshots and public URLs
+
+The eight application screenshots in `docs/screenshots/` were regenerated from this working tree at the two required viewports and have the expected pixel dimensions (1280 × 900 and 390 × 844).
+
+Public URL checks on 22 November 2026:
+
+- `https://cartly-everyday-essentials.vercel.app` returned **404**.
+- `https://github.com/Asma-Siddiqa/cartly-everyday-essentials` returned **404**.
+- `https://github.com/Abdul-Wahab1210/Ecommerce_Frontend` is reachable, but its recorded build is a different React/Vite project.
+- `https://ecommerce-frontend-one-self.vercel.app` served a Cartly home page, but direct requests to `/about` and `/products/:id` returned **404**, so it must not be submitted as a verified nested-route deployment.
+
+Local deployment configuration (`vercel.json` and `public/_redirects`) is present and the local production preview passed direct nested-route refresh. Public deployment and repository publication remain student actions.

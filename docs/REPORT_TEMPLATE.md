@@ -12,9 +12,9 @@
 | Course | CS4032 Web Programming — Assignment 02 |
 | Semester | Fall 2026 |
 | Business name | Cartly |
-| Public repository | https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
-| Deployed website | https://cartly-everyday-essentials.vercel.app |
-| Final implementation commit | `691d11b75429a04318db9bbf637c445ffb9987b4` |
+| Intended public repository | https://github.com/Asma-Siddiqa/cartly-everyday-essentials (not public at audit time) |
+| Deployed website | Pending — see README "Deployment status" (22 November 2026 check) |
+| Last committed snapshot | `2c0635fee977b3f7186e35c6890ada75e7758dfa` (update after committing the current working tree) |
 | Date | 21 November 2026 |
 
 ## 2. Business profile
@@ -83,10 +83,10 @@
 - **Task:** judge delivered cost and destination eligibility before adding an item.
 - **Observed difficulty:** the archived home page communicated the threshold through a promotional banner reading “FREE SHIPPING‡ WITH ORDERS OF $150+!” rather than through product-level delivered-cost information. The conditions behind the dagger are not visible next to the product or the add-to-bag action, so the shopper must look elsewhere or proceed deeper into the order flow.
 - **Possible business consequence:** late fees or eligibility restrictions can cause abandonment or wasted effort.
-- **Cartly improvement:** delivery panel before add-to-cart; repeated in cart/checkout; unsupported areas blocked.
+- **Cartly improvement:** delivery panel in the product purchase area, directly below the add-to-cart controls; repeated in cart/checkout; unsupported areas blocked.
 - **Matching evidence:** `docs/screenshots/03-product-details-1280.jpg`.
 
-![Cartly product page delivery panel before add-to-cart](docs/screenshots/03-product-details-1280.jpg)
+![Cartly product page delivery panel beside the purchase controls](docs/screenshots/03-product-details-1280.jpg)
 
 ### Problem 3 — Insufficient listing filters (Tesco)
 
@@ -143,7 +143,7 @@
 | --- | --- |
 | `docs/screenshots/01-home-1280.jpg` | Catalogue hierarchy: search first, sticky filters, cards with stock/price, compare action |
 | `docs/screenshots/02-search-autocomplete-1280.jpg` | Suggestions show name, category, and price with keyboard focus |
-| `docs/screenshots/03-product-details-1280.jpg` | Delivery panel before add-to-cart; primary/secondary actions separated |
+| `docs/screenshots/03-product-details-1280.jpg` | Delivery panel in the purchase area; primary/secondary actions separated |
 | `docs/screenshots/04-cart-1280.jpg` | Cart lines, stock-aware quantity, free-delivery progress, summary |
 | `docs/screenshots/05-checkout-1280.jpg` | Controlled form, labels, delivery/area fields, error summary |
 | `docs/screenshots/06-order-confirmation-1280.jpg` | Simulated confirmation with totals and delivery details |
@@ -196,8 +196,9 @@ For each investigated improvement, include **user actions → expected behaviour
 
 ### Browser status
 
-- Automated browser checks passed on the development server and production preview in Chromium.
-- Final automated console check in Microsoft Edge (21 November 2026, 1366 × 900 and 390 px, development server and production preview): all journey steps passed with no application errors or React warnings. A brief visual pass in the student's own browser is still recommended.
+- Automated checks passed on the development server and production preview in Microsoft Edge (Playwright 1.65.1).
+- On 22 November 2026, 27 named browser checks passed at 1280 × 900 and 390 × 844 with **zero application errors or React warnings**; direct nested-route refresh on the production preview returned HTTP 200. Full results are in `docs/VERIFICATION.md` section 11. A brief visual pass in the student's own browser is still recommended.
+- Loading-failure, empty-catalogue, and availability scenarios are triggered from the hidden test panel at `/about?test=1`.
 
 ## 8. Limitations
 
@@ -210,7 +211,7 @@ For each investigated improvement, include **user actions → expected behaviour
 
 ## 9. Submission checklist
 
-- [x] Student details, repository link, deployment link, and final commit hash filled in.
+- [x] Student name, roll number, and section filled in; repository/deployment links and final commit hash must be updated after the student pushes and deploys.
 - [x] Three reference screenshots inserted with dates and captions.
 - [x] Three decisions include alternative, reason, tradeoff, code location, and evidence.
 - [x] Application screenshots inserted with design annotations.

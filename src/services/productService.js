@@ -49,7 +49,7 @@ export async function getProducts({
   await wait(DEMO_CONFIG.loaderDelayMs)
 
   if (shouldFail) {
-    throw new Error('The catalogue could not be loaded. This was a simulated network failure.')
+    throw new Error('The catalogue could not be loaded. Please try again.')
   }
 
   if (emptyCatalogue) return []

@@ -23,21 +23,20 @@ export function DemoControls() {
           <FlaskConical aria-hidden="true" className="h-4 w-4" />
         </span>
         <span className="flex-1">
-          Demo settings
+          Test settings
           <span className="block text-xs font-medium text-brand-charcoal/55">
             Loading failure, catalogue emptiness, and stock availability
           </span>
         </span>
         <span className="rounded-full bg-brand-blue-soft px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-wide text-brand-navy">
-          Demo
+          Tests
         </span>
       </summary>
 
       <div className="border-t border-brand-charcoal/10 px-4 pb-4 pt-4">
         <p className="text-xs leading-relaxed text-brand-charcoal/60">
-          These controls exist to demonstrate the assignment's loading and edge-case requirements. They are
-          not a real store setting. Trigger a failure, then use the catalogue's <strong>Retry</strong> button to
-          recover.
+          Preview how the shop handles loading, empty-catalogue, and stock states. Trigger a failure, then use
+          the catalogue's <strong>Retry</strong> button to recover.
         </p>
 
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
@@ -106,7 +105,7 @@ export function DemoControls() {
               onClick={resetDemo}
               className="inline-flex h-10 items-center gap-2 rounded-xl border border-brand-charcoal/15 bg-white px-3 text-xs font-bold text-brand-charcoal transition hover:border-brand-charcoal/30"
             >
-              Reset demo settings
+              Reset test settings
             </button>
           )}
         </div>

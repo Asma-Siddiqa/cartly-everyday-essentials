@@ -253,9 +253,9 @@ export function HomePage() {
         <div className="container-shell grid grid-cols-1 gap-4 py-5 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { icon: Truck, title: 'Free over Rs. 2,000', text: 'Rs. 150 below the threshold' },
-            { icon: MapPin, title: 'Local delivery', text: 'Explicit Islamabad & Rawalpindi areas' },
+            { icon: MapPin, title: 'Local delivery', text: 'Islamabad & Rawalpindi areas' },
             { icon: SearchX, title: 'Stock you can trust', text: 'Availability shown before adding' },
-            { icon: ShoppingBag, title: 'Simulated checkout', text: 'No payment is collected' },
+            { icon: ShoppingBag, title: 'Simple checkout', text: 'Review your order before confirming' },
           ].map(({ icon: Icon, title, text }) => (
             <div key={title} className="flex items-start gap-3">
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-blue-soft text-brand-navy">
@@ -369,7 +369,7 @@ export function HomePage() {
             {status === 'error' && (
               <EmptyState
                 icon={AlertTriangle}
-                eyebrow="Loading problem"
+                eyebrow="Load error"
                 title="The catalogue didn't load"
                 description={error ?? 'Something went wrong while loading products.'}
                 action={
@@ -400,8 +400,8 @@ export function HomePage() {
                 title="There are no products in the catalogue right now"
                 description={
                   demo.emptyCatalogue
-                    ? 'The empty-catalogue demo is active. This is different from a search with no matches — the dataset itself has no records.'
-                    : 'The local catalogue returned no records. Reload the standard demo data or try again.'
+                    ? 'The catalogue is currently empty. Please check back soon.'
+                    : 'The catalogue returned no records. Please try again.'
                 }
                 action={
                   <button
@@ -476,35 +476,6 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="container-shell pb-14" aria-labelledby="improvements-heading">
-        <div className="overflow-hidden rounded-3xl bg-brand-charcoal px-6 py-8 text-white sm:px-10">
-          <div className="grid gap-6 lg:grid-cols-[1fr_1.3fr] lg:items-center">
-            <div>
-              <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Built for clarity</p>
-              <h2 id="improvements-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight">
-                Three fixes you can feel
-              </h2>
-              <p className="mt-2 text-sm leading-relaxed text-white/65">
-                Cartly's discovery and checkout experience responds to three frontend problems investigated in
-                comparable retail sites.
-              </p>
-            </div>
-            <div className="grid gap-3 sm:grid-cols-3">
-              {[
-                { number: '01', title: 'Helpful search', text: 'Name, brand, and category suggestions while typing.' },
-                { number: '02', title: 'Delivery up front', text: 'Fees, free-delivery gap, and eligible areas on each product.' },
-                { number: '03', title: 'Real filters', text: 'Price range, availability, category, and two-way sorting.' },
-              ].map((item) => (
-                <div key={item.number} className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-xs font-bold text-brand-blue">{item.number}</p>
-                  <h3 className="mt-1 font-display text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-white/60">{item.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

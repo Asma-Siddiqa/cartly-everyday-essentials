@@ -1,6 +1,6 @@
 /*
  * Demo settings are intentionally centralised and documented in the README.
- * The Home page exposes labelled controls; nothing here depends on a backend.
+ * Nothing here depends on a backend.
  */
 export const DEMO_CONFIG = {
   loaderDelayMs: 650,

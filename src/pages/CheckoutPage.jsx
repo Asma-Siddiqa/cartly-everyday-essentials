@@ -135,7 +135,7 @@ export function CheckoutPage() {
       setOrderError(
         error instanceof Error
           ? error.message
-          : 'The simulated order could not be placed. Please try again.',
+          : 'Your order could not be placed. Please try again.',
       )
     } finally {
       setIsPlacing(false)
@@ -219,7 +219,7 @@ export function CheckoutPage() {
         <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Almost there</p>
         <h1 className="mt-2 font-display text-4xl font-semibold tracking-tight text-brand-charcoal">Checkout</h1>
         <p className="mt-2 text-sm leading-relaxed text-brand-charcoal/60">
-          Enter delivery details, review the calculated total, and place a simulated order. No payment is collected.
+          Enter your delivery details, review the total, and place your order.
         </p>
       </div>
 
@@ -265,7 +265,7 @@ export function CheckoutPage() {
               Contact details
             </legend>
             <p className="mt-1 text-xs leading-relaxed text-brand-charcoal/55">
-              Used only to demonstrate validation in this session. These values are not saved to local storage.
+              We'll use these details to keep you updated about your delivery.
             </p>
 
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -457,7 +457,7 @@ export function CheckoutPage() {
                     </p>
                   ) : (
                     <p id="checkout-area-hint" className="mt-1.5 text-xs text-brand-charcoal/50">
-                      Only listed areas can proceed. “{UNSUPPORTED_AREA_OPTION}” is rejected as a demo.
+                      Only listed areas can proceed. If yours isn't listed, please contact us.
                     </p>
                   )}
                 </div>
@@ -485,9 +485,8 @@ export function CheckoutPage() {
             <p className="flex items-start gap-2 text-xs leading-relaxed text-brand-charcoal/60">
               <LockKeyhole aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-navy" />
               <span>
-                <strong className="text-brand-charcoal">Simulated order.</strong> No card details or payment are
-                requested. Name, email, phone, and street address remain in memory for this session and are not
-                written to local storage.
+                <strong className="text-brand-charcoal">Cash on delivery.</strong> No card details are required.
+                Your contact details are used only to prepare this order.
               </span>
             </p>
           </div>
@@ -514,11 +513,11 @@ export function CheckoutPage() {
               {isPlacing ? (
                 <>
                   <Spinner className="h-4 w-4" />
-                  Placing simulated order…
+                  Placing your order…
                 </>
               ) : (
                 <>
-                  Place simulated order
+                  Place order
                   <ChevronRight aria-hidden="true" className="h-4 w-4" />
                 </>
               )}

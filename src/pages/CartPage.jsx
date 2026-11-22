@@ -220,7 +220,7 @@ export function CartPage() {
             </Link>
             <p className="mt-2 flex items-center justify-center gap-1.5 text-center text-[0.7rem] text-brand-charcoal/55">
               <ShieldCheck aria-hidden="true" className="h-3.5 w-3.5" />
-              Order is simulated; no payment is collected.
+              Cash on delivery — no card details required.
             </p>
           </OrderSummary>
 

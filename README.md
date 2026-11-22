@@ -4,9 +4,9 @@
 **Student:** Asma Siddiqa
 **Roll number:** 24i-2109
 **Section:** CY-A
-**GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials
-**Deployment:** https://cartly-everyday-essentials.vercel.app
-**Final implementation commit:** `691d11b75429a04318db9bbf637c445ffb9987b4`
+**Intended GitHub repository:** https://github.com/Asma-Siddiqa/cartly-everyday-essentials (not public at the time of the 22 Nov 2026 audit)
+**Deployment:** see "Deployment status" below — the previously recorded URL is not live
+**Last committed snapshot:** `2c0635fee977b3f7186e35c6890ada75e7758dfa` (the current working tree also contains the customer-facing copy cleanup and audit fixes; commit these before submission)
 
 Cartly is a fictional local online retailer for students and young professionals in Islamabad and Rawalpindi. It is a frontend-only React application with a complete shopping journey: browse the catalogue, search and filter, open a product, build a cart, complete a validated delivery form, review calculated totals, and reach a simulated order confirmation.
 
@@ -62,7 +62,7 @@ See `docs/VERIFICATION.md` for the full verification record.
 | `/cart` | Cart lines, quantity changes, removal, reconciliation notices, delivery progress, and order summary |
 | `/checkout` | Controlled delivery form, validation summary, supported-area eligibility, stock re-check, calculated totals, simulated order |
 | `/order-confirmation/:id` | Simulated order summary and delivery details; invalid or corrupt order IDs show recovery links |
-| `/about` | Business profile, operating rules, supported areas, investigated improvements, and labelled demo controls |
+| `/about` | Business profile, customer policies, and supported delivery areas. Add `?test=1` to reveal the hidden testing controls |
 | `*` | Not-found page with links back to the shop |
 
 Header and footer links use React Router, so browser Back/Forward works. Nested routes are configured for direct refresh through SPA rewrites.
@@ -75,7 +75,7 @@ Header and footer links use React Router, so browser Back/Forward works. Nested 
 - **Product comparison** for up to three products, with a tray and a native `<dialog>` side-by-side table.
 - **Cart persistence** using `localStorage`; only product IDs and quantities are stored. Restored carts are validated against the current catalogue and stock.
 - **Asynchronous mock loader** with a visible skeleton, simulated failure, working retry, empty-catalogue state, and no-match state.
-- **Labelled demo controls** on the About page for loading failure, empty catalogue, and stock scenarios (`standard`, `limited`, `sold-out`). They are kept out of the shop page so the catalogue stays focused on shopping.
+- **Hidden testing controls** at `/about?test=1` for loading failure, empty catalogue, and stock scenarios (`standard`, `limited`, `sold-out`). They are hidden on the normal About page so the shop stays focused on shopping.
 - **Controlled checkout form** with six fields, inline errors, an error summary, preserved valid input, and focus management.
 - **Derived totals** recalculated from the cart and shared rules: item count, subtotal, delivery fee, amount to free delivery, and total.
 - **Responsive layouts** tested at 390 px and 1280 px, including a mobile menu, mobile filter drawer, stacked cards, and no page-wide horizontal overflow.
@@ -133,22 +133,24 @@ This is a frontend assignment prototype. It has no backend, authentication, real
 
 ## Reproducing edge cases
 
+> Use the site's own links (for example the Cartly logo or **Shop**) to return to `/` after changing a test setting. These settings live in React state; typing the URL again or refreshing the browser intentionally resets them.
+
 ### Loading failure and retry
 
-1. Open `/about` and use **Assignment demo controls** at the bottom.
-2. Select **Simulate load failure**.
+1. Open `/about?test=1` and expand **Test settings** at the bottom.
+2. Select **Simulate load failure (next request)**.
 3. Return to `/` and confirm the catalogue is replaced by an error panel with a **Retry loading** action.
 4. Select **Retry loading**. The retry request no longer forces failure and the catalogue loads.
 
 ### Empty catalogue vs no search matches
 
-1. Open `/about` and use **Assignment demo controls**.
-2. Enable **Empty catalogue**. Return to `/`; the result is an empty-catalogue message with a reset action, not a “no match” message.
+1. Open `/about?test=1` and expand **Test settings**.
+2. Enable **Simulate an empty catalogue**. Return to `/`; the result is an empty-catalogue message with a reset action, not a “no match” message.
 3. Disable it, then search for a term such as `zzzz`. The result is a separate no-match panel with **Clear search/filters**.
 
 ### Changed availability
 
-1. Open `/about` and use **Assignment demo controls**.
+1. Open `/about?test=1` and expand **Test settings**.
 2. Choose **Low stock** or **Several items sold out**.
 3. Return to `/` and check the catalogue, product details, cart, and checkout. Stock badges and quantity limits update from the same catalogue state.
 4. Choose **Standard stock** to restore the original levels.
@@ -187,7 +189,7 @@ This is a frontend assignment prototype. It has no backend, authentication, real
 - No backend, real payments, authentication, email/SMS, courier integration, or live stock.
 - Reference-site evidence is in `docs/reference/`. eXtra and Tesco were captured live on 21 November 2026; Ann Taylor blocked automated access, so an archived snapshot (3 January 2025) is used with that limitation stated in `docs/INVESTIGATION.md`.
 - The order confirmation is retrievable only from the same browser's `localStorage`; orders are not shared across devices.
-- Automated browser checks used Playwright Chromium, and a final automated Edge console check was completed on 21 November 2026 with no application errors or React warnings. See `docs/VERIFICATION.md`.
+- On 22 November 2026, 27 automated browser checks passed in Microsoft Edge at 1280 × 900 and 390 × 844 with no application errors or React warnings; production-preview nested-route refresh also passed. See `docs/VERIFICATION.md` section 11.
 - The public repository and deployment must be pushed/verified with the student's own accounts; see "Deployment preparation" below.
 
 ## Project structure
@@ -198,7 +200,7 @@ src/
 ├── components/
 │   ├── cart/               Cart line, order summary
 │   ├── compare/            Compare tray and dialog
-│   ├── demo/               Labelled assignment demo controls (About page)
+│   ├── demo/               Hidden test settings (/about?test=1)
 │   ├── filters/            Filter panel and active filter chips
 │   ├── layout/             Header, footer, layout, route focus
 │   ├── product/            Product card, grid, delivery panel
@@ -239,11 +241,12 @@ src/
 
 ## Documentation
 
+- `docs/AUDIT.md` — pre-change audit, remediation notes, and final checklist.
 - `REQUIREMENTS.md` — requirement-by-requirement checklist and honest status.
 - `DECISIONS.md` — three frontend decisions with alternatives, reasons, tradeoffs, code locations, and evidence.
 - `docs/INVESTIGATION.md` — reference-site investigation notes and screenshot capture steps.
 - `docs/VERIFICATION.md` — test results, browser checks, responsive checks, and edge-case record.
-- `docs/REPORT_TEMPLATE.md` — PDF report outline with required sections and placeholders.
+- `docs/REPORT_TEMPLATE.md` — PDF report source with required sections and embedded evidence.
 - `docs/screenshots/` — locally captured application screenshots at 1280 px and 390 px.
 
 ## Asset licensing
@@ -255,6 +258,13 @@ The exact Unsplash photo pages were not recorded in this working snapshot. Befor
 Cartly branding, copy, data, and components are original for this assignment; no reference-site branding, layout, or assets are copied.
 
 ## Deployment
+
+### Deployment status (checked 22 November 2026)
+
+- `https://cartly-everyday-essentials.vercel.app` returned **404** and should not be submitted as a live link.
+- The reachable URL mentioned in the task, `https://ecommerce-frontend-one-self.vercel.app`, serves a Cartly page, but direct requests to `/about` and `/products/:id` returned **404**. That build is either older or deployed without the SPA rewrite.
+- The local `vercel.json` rewrite and `public/_redirects` are correct for this project, but the deployment must be made **from this project directory** (or with Vercel Root Directory set to it) before nested-route refresh works publicly.
+- Do not claim a working deployment until the steps below are completed and a direct `/products/:id` refresh succeeds.
 
 The production build is deployment-ready. Hosts that support SPA rewrites are suitable.
 
@@ -271,4 +281,4 @@ The production build is deployment-ready. Hosts that support SPA rewrites are su
 2. `public/_redirects` contains `/* /index.html 200`, which Vite copies into the build.
 3. Verify direct nested-route refresh after deployment.
 
-The expected public URLs are recorded at the top of this file. If the hosting service assigns a different URL, update the README and the report before submission.
+After deploying, replace the placeholder status above with the real public URL and update `docs/REPORT_TEMPLATE.md` (then regenerate the PDF) before submission.

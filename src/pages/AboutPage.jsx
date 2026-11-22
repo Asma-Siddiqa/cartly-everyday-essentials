@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import {
   ArrowRight,
   Check,
@@ -7,10 +7,7 @@ import {
   MapPin,
   PackageCheck,
   Scale,
-  Search,
-  ShieldCheck,
   ShoppingBag,
-  Sparkles,
   Truck,
   XCircle,
 } from 'lucide-react'
@@ -26,7 +23,7 @@ import {
 const profile = [
   {
     label: 'Business identity',
-    value: 'Cartly — a fictional local online retailer',
+    value: 'Cartly — a local online retailer',
     detail:
       'A curated shop for practical tech, study, home, and lifestyle products. The catalogue contains 13 locally priced products with stock and delivery details.',
   },
@@ -46,7 +43,7 @@ const profile = [
     label: 'Main customer task',
     value: 'Find, compare, and order everyday essentials',
     detail:
-      'Browse, search, combine filters, compare up to three products, build a cart, and complete a simulated delivery checkout.',
+      'Browse, search, combine filters, compare up to three products, build a cart, and complete a delivery checkout.',
   },
   {
     label: 'Business goal',
@@ -56,41 +53,10 @@ const profile = [
   },
 ]
 
-const improvements = [
-  {
-    icon: Search,
-    eyebrow: 'Search discovery',
-    title: 'Helpful suggestions while typing',
-    problem:
-      'The investigated eXtra storefront search experience did not give strong, relevant suggestions while a shopper typed.',
-    response:
-      "Cartly's search matches product name, brand, category, and curated keywords, then shows keyboard-accessible product suggestions with prices before the shopper commits to a full search.",
-    proof: 'Type “sound” or “audio” in the header or hero search.',
-  },
-  {
-    icon: Truck,
-    eyebrow: 'Delivery clarity',
-    title: 'Charges and eligibility on the product page',
-    problem:
-      'The investigated Ann Taylor product experience made shipping costs and conditions difficult to see before checkout.',
-    response:
-      'Every product page now shows the delivery charge, the free-delivery threshold, the remaining amount needed, the estimate, and the exact supported areas. The cart and checkout repeat the same calculation.',
-    proof: 'Open any product priced below Rs. 2,000 and read the delivery panel.',
-  },
-  {
-    icon: Scale,
-    eyebrow: 'Listing controls',
-    title: 'Filters and sorting that work together',
-    problem:
-      'The investigated Tesco listing experience lacked sufficient filters, especially a useful price range.',
-    response:
-      'Cartly combines search, category, availability, minimum price, and maximum price, with price sorting in both directions, rating sorting, and name sorting. The same state powers the count and empty state.',
-    proof: 'Set a price range, switch to out-of-stock, then change the sort order.',
-  },
-]
-
 export function AboutPage() {
   usePageTitle('About Cartly')
+  const [searchParams] = useSearchParams()
+  const showTestControls = searchParams.has('test')
 
   return (
     <div>
@@ -102,9 +68,9 @@ export function AboutPage() {
             Useful things, chosen carefully for life between campus and the city.
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-charcoal/65">
-            Cartly is a fictional Islamabad–Rawalpindi retailer created for Web Programming Assignment 02.
-            It focuses on the small decisions that make online shopping frustrating: finding the right product,
-            knowing what delivery will cost, and understanding which location can actually be served.
+            Cartly is an Islamabad–Rawalpindi retailer built around the details that make online
+            shopping easy: finding the right product, knowing what delivery will cost, and knowing
+            which areas we serve.
           </p>
           <div className="mt-7 flex flex-wrap gap-3">
             <Link
@@ -118,7 +84,7 @@ export function AboutPage() {
               href="#rules"
               className="inline-flex h-11 items-center gap-2 rounded-xl border border-brand-charcoal/15 bg-white px-4 text-sm font-bold text-brand-charcoal transition hover:border-brand-charcoal/30 hover:bg-brand-blue-soft"
             >
-              Read the operating rules
+              Read our customer policies
             </a>
           </div>
         </div>
@@ -129,7 +95,7 @@ export function AboutPage() {
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Business profile</p>
             <h2 id="profile-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight text-brand-charcoal sm:text-4xl">
-              The brief behind Cartly
+              Why shop with Cartly
             </h2>
           </div>
           <p className="max-w-md text-sm leading-relaxed text-brand-charcoal/55">
@@ -153,13 +119,12 @@ export function AboutPage() {
 
       <section id="rules" className="scroll-mt-48 lg:scroll-mt-36 border-y border-brand-charcoal/10 bg-white py-12" aria-labelledby="rules-heading">
         <div className="container-shell">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Operating rules</p>
+          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Customer policies</p>
           <h2 id="rules-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight text-brand-charcoal sm:text-4xl">
-            Three rules, stated up front
+            Good to know before you order
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-brand-charcoal/60">
-            These are actual application rules, not decorative copy. Each one is enforced in code, shown in
-            the interface, and has a boundary case.
+            Clear, simple policies on stock, delivery areas, and charges — so there are no surprises at checkout.
           </p>
 
           <div className="mt-7 grid gap-5 xl:grid-cols-3">
@@ -172,17 +137,17 @@ export function AboutPage() {
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-brand-charcoal/65">
                 A customer can order between 1 unit and the currently available stock. Zero-stock products
-                cannot be added. The quantity controls stop at the available limit, and the cart logic also
-                rejects any request one unit above stock.
+                cannot be added. The quantity controls stop at the available limit, and your cart is checked
+                again when you place the order.
               </p>
               <dl className="mt-4 space-y-2 text-xs">
                 <div>
-                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Told to the user</dt>
+                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Where you'll see it</dt>
                   <dd className="mt-0.5 text-brand-charcoal/65">Product card badge, product page quantity area, cart stock note.</dd>
                 </div>
                 <div>
-                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Boundary</dt>
-                  <dd className="mt-0.5 text-brand-charcoal/65">With 4 in stock, quantity 4 is accepted; quantity 5 is rejected with “Only 4 units are available.”</dd>
+                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Example</dt>
+                  <dd className="mt-0.5 text-brand-charcoal/65">With 4 in stock, you can order up to 4. Asking for more shows “Only 4 units are available.”</dd>
                 </div>
               </dl>
               <Link to="/products/hydra-steel-bottle" className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy underline decoration-brand-navy/30 underline-offset-2">
@@ -199,18 +164,17 @@ export function AboutPage() {
                 2. Delivery eligibility
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-brand-charcoal/65">
-                Delivery is available only in the explicitly listed {SERVICE_CITIES.join(' and ')} areas.
-                An empty area shows a validation message. An unsupported city or area cannot proceed to
-                confirmation.
+                Delivery is available only in the listed {SERVICE_CITIES.join(' and ')} areas.
+                Please choose a supported city and area at checkout.
               </p>
               <dl className="mt-4 space-y-2 text-xs">
                 <div>
-                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Told to the user</dt>
-                  <dd className="mt-0.5 text-brand-charcoal/65">Product delivery panel, checkout area list and hint, error summary.</dd>
+                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Where you'll see it</dt>
+                  <dd className="mt-0.5 text-brand-charcoal/65">Product delivery panel, checkout area list, and error messages.</dd>
                 </div>
                 <div>
-                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Boundary</dt>
-                  <dd className="mt-0.5 text-brand-charcoal/65">F-11 in Islamabad is accepted. “{UNSUPPORTED_AREA_OPTION}” or an unsupported city is rejected.</dd>
+                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Example</dt>
+                  <dd className="mt-0.5 text-brand-charcoal/65">F-11 in Islamabad is supported. “{UNSUPPORTED_AREA_OPTION}” and areas outside our list are not.</dd>
                 </div>
               </dl>
               <a href="#delivery" className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy underline decoration-brand-navy/30 underline-offset-2">
@@ -228,16 +192,16 @@ export function AboutPage() {
               </h3>
               <p className="mt-2 text-sm leading-relaxed text-brand-charcoal/65">
                 Product subtotals below {formatPKR(FREE_DELIVERY_THRESHOLD)} add {formatPKR(DELIVERY_FEE)}
-                delivery. At {formatPKR(FREE_DELIVERY_THRESHOLD)} or more, delivery is free. The same function
-                powers the product panel, cart, checkout, and confirmation.
+                delivery. At {formatPKR(FREE_DELIVERY_THRESHOLD)} or more, delivery is free. The same total
+                appears on the product page, in your cart, and at checkout.
               </p>
               <dl className="mt-4 space-y-2 text-xs">
                 <div>
-                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Told to the user</dt>
-                  <dd className="mt-0.5 text-brand-charcoal/65">Product panel, free-delivery progress bar, cart summary, checkout total.</dd>
+                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Where you'll see it</dt>
+                  <dd className="mt-0.5 text-brand-charcoal/65">Product panel, free-delivery note, cart summary, checkout total.</dd>
                 </div>
                 <div>
-                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Boundary</dt>
+                  <dt className="font-bold uppercase tracking-wide text-brand-charcoal/45">Example</dt>
                   <dd className="mt-0.5 text-brand-charcoal/65">
                     {formatPKR(1999)} → {formatPKR(150)} fee · {formatPKR(2000)} → free · {formatPKR(2001)} → free.
                   </dd>
@@ -245,7 +209,7 @@ export function AboutPage() {
               </dl>
               <span className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy">
                 <Check aria-hidden="true" className="h-3.5 w-3.5" />
-                Tested in the Node rule suite
+                Calculated automatically at checkout
               </span>
             </article>
           </div>
@@ -255,8 +219,7 @@ export function AboutPage() {
               <div>
                 <h3 className="font-display text-2xl font-semibold text-brand-charcoal">Supported delivery areas</h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-charcoal/65">
-                  This is the complete, explicit service list. Choosing <strong>{UNSUPPORTED_AREA_OPTION}</strong>{' '}
-                  in checkout demonstrates the rejection.
+                  These are the areas we currently serve. Please choose one from this list when you check out.
                 </p>
                 <p className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-brand-navy">
                   <Truck aria-hidden="true" className="h-4 w-4" />
@@ -286,7 +249,7 @@ export function AboutPage() {
       <section id="compare" className="container-shell scroll-mt-48 lg:scroll-mt-36 py-12" aria-labelledby="compare-heading">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Compare with context</p>
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Product comparison</p>
             <h2 id="compare-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight text-brand-charcoal sm:text-4xl">
               Compare up to three products without losing your place
             </h2>
@@ -308,112 +271,35 @@ export function AboutPage() {
           <div className="grid gap-3 sm:grid-cols-3">
             <div className="rounded-2xl border border-brand-charcoal/10 bg-white p-4 shadow-card">
               <CheckCircle2 aria-hidden="true" className="h-5 w-5 text-emerald-700" />
-              <p className="mt-3 text-sm font-bold text-brand-charcoal">Selected state</p>
+              <p className="mt-3 text-sm font-bold text-brand-charcoal">Clear selection</p>
               <p className="mt-1 text-xs leading-relaxed text-brand-charcoal/60">
-                A dark scale button plus “In compare list” text makes selection clear without relying on colour alone.
+                Selected products are clearly marked so you always know what's on your shortlist.
               </p>
             </div>
             <div className="rounded-2xl border border-brand-charcoal/10 bg-white p-4 shadow-card">
               <XCircle aria-hidden="true" className="h-5 w-5 text-brand-charcoal/50" />
               <p className="mt-3 text-sm font-bold text-brand-charcoal">Clear limit</p>
               <p className="mt-1 text-xs leading-relaxed text-brand-charcoal/60">
-                The tray shows 2/3 and explains when the limit is reached. Remove one to add another.
+                The tray shows your count, up to three products. Remove one to add another.
               </p>
             </div>
             <div className="rounded-2xl border border-brand-charcoal/10 bg-white p-4 shadow-card">
-              <Sparkles aria-hidden="true" className="h-5 w-5 text-brand-navy" />
-              <p className="mt-3 text-sm font-bold text-brand-charcoal">Useful evidence</p>
+              <Scale aria-hidden="true" className="h-5 w-5 text-brand-navy" />
+              <p className="mt-3 text-sm font-bold text-brand-charcoal">Side-by-side details</p>
               <p className="mt-1 text-xs leading-relaxed text-brand-charcoal/60">
-                The dialog compares the values that affect a purchase decision, not just product photographs.
+                Compare price, rating, stock, brand, and delivery — the details that help you decide.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-brand-charcoal/10 bg-white py-12" aria-labelledby="improvements-heading">
-        <div className="container-shell">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Investigation context</p>
-          <h2 id="improvements-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight text-brand-charcoal sm:text-4xl">
-            Three reference-site problems, answered here
-          </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-brand-charcoal/60">
-            The assignment investigation started with eXtra, Ann Taylor, and Tesco. These observations are
-            investigation findings for the assignment, not claims that the live sites behave the same way today.
-            The student's own dated screenshots are the report evidence; Cartly demonstrates the improved
-            behaviour in a working interface.
-          </p>
-
-          <div className="mt-7 grid gap-5 lg:grid-cols-3">
-            {improvements.map(({ icon: Icon, eyebrow, title, problem, response, proof }) => (
-              <article key={title} className="rounded-3xl border border-brand-charcoal/10 bg-brand-cream p-5">
-                <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-blue-soft text-brand-navy">
-                  <Icon aria-hidden="true" className="h-5 w-5" />
-                </span>
-                <p className="mt-4 text-[0.68rem] font-bold uppercase tracking-[0.15em] text-brand-blue-strong">
-                  {eyebrow}
-                </p>
-                <h3 className="mt-1 font-display text-xl font-semibold text-brand-charcoal">{title}</h3>
-                <p className="mt-3 text-xs leading-relaxed text-brand-charcoal/60">
-                  <strong className="text-brand-charcoal">Problem:</strong> {problem}
-                </p>
-                <p className="mt-2 text-xs leading-relaxed text-brand-charcoal/60">
-                  <strong className="text-brand-charcoal">Cartly response:</strong> {response}
-                </p>
-                <p className="mt-3 rounded-xl bg-white px-3 py-2 text-[0.7rem] font-semibold leading-relaxed text-brand-charcoal/60">
-                  Try it: {proof}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="container-shell py-12" aria-labelledby="limitations-heading">
-        <div className="grid gap-6 rounded-3xl bg-brand-charcoal p-6 text-white sm:p-9 lg:grid-cols-[1fr_1fr]">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue">Assignment scope</p>
-            <h2 id="limitations-heading" className="mt-2 font-display text-3xl font-semibold tracking-tight">
-              What is real, and what is simulated
-            </h2>
-            <p className="mt-3 text-sm leading-relaxed text-white/65">
-              Cartly is a complete frontend demonstration: catalogue data, search, filters, cart persistence,
-              rules, validation, and order confirmation all work. There is no backend, payment processor, or
-              courier integration.
-            </p>
-          </div>
-          <ul className="space-y-3 text-sm text-white/75">
-            <li className="flex gap-2">
-              <CheckCircle2 aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
-              Local JavaScript data, async mock loading, simulated orders, local storage for cart and comparison.
-            </li>
-            <li className="flex gap-2">
-              <XCircle aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-coral" />
-              No real payment, stock reservation, customer account, delivery booking, or personal data storage.
-            </li>
-            <li className="flex gap-2">
-              <ShieldCheck aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-brand-blue" />
-              Product photography is licensed stock imagery; business details and product brands are fictional.
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="demo-controls" className="container-shell scroll-mt-48 lg:scroll-mt-36 pb-12" aria-labelledby="demo-heading">
-        <div className="rounded-3xl border border-dashed border-brand-charcoal/25 bg-white p-5 sm:p-6">
-          <p className="text-xs font-bold uppercase tracking-[0.18em] text-brand-blue-strong">Verification tools</p>
-          <h2 id="demo-heading" className="mt-2 font-display text-2xl font-semibold tracking-tight text-brand-charcoal">
-            Assignment demo controls
-          </h2>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-brand-charcoal/60">
-            These controls are kept off the shop page so the catalogue stays focused on shopping. Use them here to
-            demonstrate loading failure, the empty catalogue, and changed stock availability.
-          </p>
-          <div className="mt-5">
-            <DemoControls />
-          </div>
-        </div>
-      </section>
+      {showTestControls && (
+        <section className="container-shell pb-12" aria-labelledby="test-controls-heading">
+          <h2 id="test-controls-heading" className="sr-only">Testing controls</h2>
+          <DemoControls />
+        </section>
+      )}
     </div>
   )
 }

@@ -4,9 +4,9 @@ Source: `Web Programming_A#02.pdf` (CS4032, Fall 2026), National University of C
 
 Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires the student's own account/browser evidence.
 
-> **Student details are deliberately placeholders.** The brief requires the student's name, roll number, section, GitHub URL, and deployment URL. Those were not supplied, so they must be filled in before submission.
+> **Student details are filled in** in `README.md` and `docs/REPORT_TEMPLATE.md` from the existing project. The public repository and deployment URLs should be re-checked after the student pushes and deploys the final commit.
 
-**Current verification snapshot:** `npm test` reports **41/41 passing**; `npm run build` succeeds; automated Chromium checks cover all routes, the full journey, boundaries, persistence, loading/error states, and 390/1280 px layouts. Reference-site screenshots, a final manual Chrome/Edge console pass, public GitHub publication, and public deployment still require the student's own accounts and evidence. Details: `docs/VERIFICATION.md`.
+**Current verification snapshot (22 November 2026):** `npm test` reports **41/41 passing**; `npm run build` succeeds. 27 automated Edge checks cover all routes, the full journey, boundaries, persistence, loading/error states, and 390/1280 px layouts with zero console errors. Public GitHub publication, public deployment, the source ZIP, and a final visual pass in the student's own browser still require the student. Details: `docs/VERIFICATION.md` section 11 and `docs/AUDIT.md`.
 
 ---
 
@@ -21,7 +21,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
   3. Insufficient listing filters, especially price filtering (Tesco).
 - [x] **Problems are distinct** (search discovery, delivery information, listing controls) and linked to business goals.
 - [x] **1.4 Evidence plan:** URL, screenshot, task, observed difficulty, possible business consequence, and proposed improvement captured for each problem.
-- [manual] **Reference-site screenshots:** must be captured by the student from the live reference sites for the PDF report. This project does not fabricate screenshots. Capture steps are recorded in `docs/INVESTIGATION.md`.
+- [x] **Reference-site screenshots:** three genuine captures are stored in `docs/reference/` with dates, URLs, and limitations. Capture steps are recorded in `docs/INVESTIGATION.md`.
 - [x] **Original work:** no copied branding, layout, assets, or code from the reference sites.
 
 **Implementation:** `docs/INVESTIGATION.md`, `DECISIONS.md`, home search, product delivery panel, filter sidebar.
@@ -45,7 +45,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
   - **Eligibility/compatibility:** delivery only to explicitly supported Islamabad/Rawalpindi areas.
   - **Pricing/fulfilment:** Rs. 150 delivery below Rs. 2,000; free delivery at Rs. 2,000 or more.
 - [x] Each rule states its exact condition.
-- [x] Each rule is communicated before and at the point of use (product page, cart, checkout, demo controls).
+- [x] Each rule is communicated before and at the point of use (product page, cart, checkout, hidden test controls at `/about?test=1`).
 - [x] Each rule changes application behaviour and prevents invalid completion.
 - [x] Boundary cases documented and tested (stock exactly at limit; 1 above; 0; Rs. 1,999 / 2,000 / 2,001; unsupported area).
 
@@ -60,7 +60,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - [x] At least one decision concerns **interaction/state behaviour**: URL-synced filters and search (and cart state) — Decision 3.
 - [x] At least one decision concerns **information hierarchy or mobile layout**: delivery panel placement and mobile filter drawer — Decisions 2 and 3.
 - [x] Entries are short, specific, and reference real files/functions.
-- [manual] Improvement evidence screenshots and reference screenshots must be added to the PDF report.
+- [x] Improvement-evidence screenshots and reference screenshots are embedded in the PDF report.
 
 ---
 
@@ -97,7 +97,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - [x] Simulated order; no real payment details.
 - [x] Cart survives refresh and navigation.
 - [x] Loading, error, retry, empty catalogue, and no-match states.
-- [x] Demo controls for loading failure and availability changes, labelled in the UI and documented.
+- [x] Hidden test controls for loading failure and availability changes at `/about?test=1`, documented in the README.
 
 ---
 
@@ -110,7 +110,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 | Props | Data passed to children | `ProductCard`, `QuantitySelector`, `StatusMessage`, layout components | [x] |
 | Callback props | Child sends actions to state owner | `ProductCard` callbacks, `QuantitySelector`, `FiltersPanel`, `CheckoutForm` | [x] |
 | Events | React handlers; prevent default submit | Search submit, add/remove, quantity, checkout form | [x] |
-| State | `useState` for changing/controlled values | Search input, forms, demo controls, compare tray, cart | [x] |
+| State | `useState` for changing/controlled values | Search input, forms, test controls, compare tray, cart | [x] |
 | Functional updates | Next state depends on previous | Cart add/update/remove, compare toggle | [x] |
 | Objects | Immutable form/record updates | Checkout form, storage records | [x] |
 | Arrays | Add/remove/update without mutation | Cart items, compare IDs, filtered lists | [x] |
@@ -178,13 +178,13 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 | Invalid form input | Specific feedback; preserve valid input | Six validation rules; per-field messages; form state preserved | [x] |
 | Unavailable or restored selection | Check current data/rules, explain, allow correction | Cart reconciliation detects deleted products, zero stock, and excessive quantities; displays notices and fixes/corrects | [x] |
 | Loading failure | Clear error and working retry | Error panel + retry; one-shot failure demonstration recovers on retry | [x] |
-| Loading failure demo control | Clearly labelled/documented | About page "Assignment demo controls"; README instructions | [x] |
+| Loading failure test control | Reachable and documented | `/about?test=1` → **Test settings** → **Simulate load failure (next request)** | [x] |
 | Changed availability demo control | Clearly labelled/documented | Stock scenario selector: standard, low stock, sold out; shared catalogue state | [x] |
-| Console errors/warnings | Resolve | Production build and browser checks documented in `docs/VERIFICATION.md` | [manual] |
+| Console errors/warnings | Resolve | 27 automated Edge checks and production preview recorded zero application errors/warnings in `docs/VERIFICATION.md` section 11 | [x] |
 
 - [x] Documented user actions, expected behaviour, and observed behaviour for each improvement.
-- [x] Edge-case checklist and screenshots plan in `docs/VERIFICATION.md`.
-- [x] Automated Chromium checks completed on the development server and production preview with no observed application errors or React warnings.
+- [x] Edge-case checklist and regenerated screenshots recorded in `docs/VERIFICATION.md`.
+- [x] 27 automated Edge checks completed on the development server; production-preview nested-route refresh passed with no observed application errors or React warnings.
 - [manual] Final manual Chrome/Edge pass with the console kept open. This is not yet claimed.
 - [manual] Final student browser screenshot proof.
 
@@ -204,7 +204,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 
 ### 8.1 GitHub
 
-- [x] Local Git repository initialized and organised into five logical milestone commits:
+- [x] Local Git repository initialized with logical milestone commits (setup, browsing, cart/checkout, documentation, tests, and UI polish):
   1. Initial setup and business data.
   2. Components, routes, and product browsing.
   3. Selection/cart workflow, checkout form, and operating rules.
@@ -230,8 +230,8 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 
 ## 9. Submission requirements
 
-- [ ] PDF report with required sections in order (student/project details, business profile, operating rules, reference investigation, decisions, implemented application screenshots, verification, limitations).
-  - [x] Report source prepared in `docs/REPORT_TEMPLATE.md` with placeholders for student details and reference screenshots.
+- [x] PDF report with required sections in order (student/project details, business profile, operating rules, reference investigation, decisions, implemented application screenshots, verification, limitations).
+  - [x] Report source in `docs/REPORT_TEMPLATE.md`; exported PDF at `docs/Cartly_Assignment_02_Report.pdf`.
 - [ ] Source-code ZIP named `RollNo_Name_Section_A#02.zip` (student-specific; not generated to avoid inventing details).
 - [ ] Public GitHub repository link.
 - [ ] Deployed website link.
@@ -253,9 +253,9 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 | Business rules | 10 | Three distinct rules, UI communication, enforcement, boundary tests | [x] |
 | Visual design | 7 | Consistent identity, hierarchy, responsive layouts, clear states/actions | [x] |
 | Responsiveness and accessibility | 8 | 390 px and 1280 px, semantic controls, keyboard access, labels, focus, live feedback | [x] |
-| Edge cases and rule tests | 7 | Recovery states, demo controls, Node tests with boundary cases | [x] |
+| Edge cases and rule tests | 7 | Recovery states, hidden test controls, Node tests with boundary cases | [x] |
 | Investigation and decisions | 7 | Three problems, decisions with alternatives/tradeoffs/code | [x] |
-| GitHub and documentation | 3 | Local five-milestone history, README, DECISIONS, reproducible setup | [manual] publish |
+| GitHub and documentation | 3 | Local milestone history, README, DECISIONS, reproducible setup | [manual] publish |
 | Deployment | 3 | Build + SPA rewrite prep; public deployment pending account access | [manual] |
 | Individual viva | 15 | Concept map and code organization support explanation; must be studied by student | [manual] |
 
@@ -265,7 +265,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 
 - No backend, authentication, real payments, or real order processing.
 - No real courier integration; delivery times are estimates.
-- Reference-site observations are based on the investigation brief supplied with this project; the student must capture their own screenshots and avoid claiming live verification unless re-checked.
+- Reference-site observations are recorded in `docs/INVESTIGATION.md`; the Ann Taylor image is an archived snapshot and the Tesco capture had its cookie overlay hidden. Do not claim those problems were re-verified on the live sites after the capture date.
 - Product names, brands, and business details are fictional; product photos are licensed stock images.
 - Deployment and GitHub publication require the student's accounts and credentials.
-- Student identity fields remain placeholders.
+- The final commit hash in the report/README must be updated after the student commits the remaining working-tree changes.

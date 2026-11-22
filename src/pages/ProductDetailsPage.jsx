@@ -86,7 +86,7 @@ export function ProductDetailsPage() {
       <div className="container-shell py-12">
         <EmptyState
           icon={AlertTriangle}
-          eyebrow="Loading problem"
+          eyebrow="Load error"
           title="We couldn't load this product"
           description={error ?? 'The catalogue request failed. Please try again.'}
           action={
