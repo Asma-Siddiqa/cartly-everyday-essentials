@@ -143,7 +143,7 @@ access path, documentation claim, or behaviour needs correction; **Missing** = n
 | Screenshots present | Partial | 8 screenshots exist but were captured before the latest UI copy cleanup | Regenerate from current app |
 | `REQUIREMENTS.md` accurate | Partial | Still says student details are placeholders, screenshots must be captured, PDF missing, demo controls on About page | Update to current state |
 | Source ZIP | Missing (manual) | No ZIP in project root; student-specific filename required | Student to create after final commit |
-| Git history with meaningful commits | Complete | 10 local commits, real dates; HEAD `2c0635f`; working tree has uncommitted copy cleanup | Student to commit remaining changes; do not fabricate commits |
+| Git history with meaningful commits | Complete | 10 local commits, real dates; HEAD `967a5a9`; working tree has uncommitted copy cleanup | Student to commit remaining changes; do not fabricate commits |
 
 ## Immediate remediation plan
 
@@ -175,6 +175,6 @@ The table above records the state **before** remediation. The actions in that pl
 | M. Responsive design and accessibility | Complete | 27 Edge checks at 390 px and 1280 px passed with zero console errors; screenshots regenerated |
 | N. Three improvements are real | Complete | Autocomplete, delivery panel, and price filter remain customer-facing with no competitor/assignment promo text |
 | README / DECISIONS / REQUIREMENTS / report | Complete | Stale commit, demo-control, placeholder, screenshot, and deployment claims corrected; PDF regenerated |
-| Public GitHub / deployment / ZIP / final commit hash | Complete | Public repo and Vercel URL verified at both viewports; implementation commit `d5fda9e`; repository-cleanup commit `a453325` untracks the PDF and tidies `.gitignore`; source ZIP regenerated from the tracked project files |
+| Public GitHub / deployment / ZIP / final commit hash | Complete | Public repo and Vercel URL verified at both viewports; implementation commit `5ed26cc`; repository-cleanup commit `a5ee9e6` untracks the PDF and tidies `.gitignore`; source ZIP regenerated from the tracked project files |
 
 **Remaining student actions:** do a brief visual pass in the student's own browser and submit on Google Classroom before the deadline. The implementation is committed, published, deployed, and packaged; later commits are documentation-only.

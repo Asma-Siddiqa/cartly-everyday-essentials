@@ -4,7 +4,7 @@ Source: `Web Programming_A#02.pdf` (CS4032), National University of Computer and
 
 Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires the student's own account/browser evidence.
 
-> **Student details are filled in** in `README.md` and `docs/REPORT_TEMPLATE.md` from the existing project. The public repository and deployment URLs were verified on 22 November 2026; the final repository-cleanup commit `a453325` is pushed to `main`, and the final HEAD is recorded in the generated PDF and submission message.
+> **Student details are filled in** in `README.md` and `docs/REPORT_TEMPLATE.md` from the existing project. The public repository and deployment URLs were verified on 22 November 2026; the final repository-cleanup commit `a5ee9e6` is pushed to `main`, and the final HEAD is recorded in the generated PDF and submission message.
 
 **Current verification snapshot (22 November 2026):** `npm test` reports **41/41 passing**; `npm run build` succeeds. 27 automated Edge checks cover all routes, the full journey, boundaries, persistence, loading/error states, and 390/1280 px layouts with zero console errors. Public GitHub publication and Vercel deployment are complete and their nested routes were verified at both viewports. Only a brief visual pass in the student's own browser and the final Classroom submission remain. Details: `docs/VERIFICATION.md` sections 11–12 and `docs/AUDIT.md`.
 
@@ -213,7 +213,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - [x] Commit messages explain changes, and commits use genuine current timestamps (no backdating).
 - [x] Source, dependency files, lockfile, README, DECISIONS, tests, and assets included.
 - [x] `node_modules`, build output, and secrets excluded via `.gitignore`.
-- [x] **Published to a public GitHub repository** — https://github.com/Asma-Siddiqa/cartly-everyday-essentials; implementation commit `d5fda9e66289ea6c9787472234706e02fc010258` pushed to `main`.
+- [x] **Published to a public GitHub repository** — https://github.com/Asma-Siddiqa/cartly-everyday-essentials; implementation commit `5ed26cc5b27abba0e57c820e22b7fc0234b4bc75` pushed to `main`.
 - [x] Public URL supplied in README/report.
 - [manual] The repository history was assembled from the completed implementation using real timestamps. It does not recreate a repository created at the very start of development, and no history was fabricated or backdated.
 
@@ -235,7 +235,7 @@ Legend: `[x]` implemented and verified · `[ ]` pending · `[manual]` requires t
 - [x] Source-code ZIP prepared with the private submission filename, excluding `node_modules`, `dist`, `.git`, local Vercel files, environment files, and the PDF report.
 - [x] Public GitHub repository link.
 - [x] Deployed website link.
-- [x] Final implementation commit `d5fda9e` and repository-cleanup commit `a453325` recorded; final HEAD recorded in the generated PDF and submission message.
+- [x] Final implementation commit `5ed26cc` and repository-cleanup commit `a5ee9e6` recorded; final HEAD recorded in the generated PDF and submission message.
 - [x] Source, local data, assets, styles, test file, dependency files, lockfile, README, and DECISIONS included.
 - [x] No `node_modules`, build output, or secrets committed.
 - [x] Report/repository/deployment/ZIP consistency verified; PDF is a separate untracked local submission.

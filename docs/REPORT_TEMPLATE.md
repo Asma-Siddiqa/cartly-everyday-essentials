@@ -11,8 +11,8 @@
 | Business name | Cartly |
 | Public repository | https://github.com/Asma-Siddiqa/cartly-everyday-essentials |
 | Deployed website | https://cartly-everyday-essentials.vercel.app |
-| Final implementation commit | `d5fda9e66289ea6c9787472234706e02fc010258` |
-| Final repository commit | `a45332533fdb9c11806cb5923542b99a16bc5782` — untracks the PDF report and tidies `.gitignore`; a later documentation-only commit records the final HEAD |
+| Final implementation commit | `5ed26cc5b27abba0e57c820e22b7fc0234b4bc75` |
+| Final repository commit | `a5ee9e6bc3a7d86a0f67fc4a2c6caade6166a4e6` — untracks the PDF report and tidies `.gitignore`; a later documentation-only commit records the final HEAD |
 | Date | 22 November 2026 |
 
 ## 2. Business profile
